@@ -31,6 +31,16 @@
     self.descriptionView.layer.borderWidth = 2.0f;
     self.descriptionView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.descriptionView.layer.cornerRadius = 8;
+    
+    //stack overflow
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:gestureRecognizer];
+    gestureRecognizer.cancelsTouchesInView = NO;
+}
+
+- (void)dismissKeyboard
+{
+     [self.view endEditing:YES];
 }
 
 - (IBAction)onTakePicture:(id)sender {

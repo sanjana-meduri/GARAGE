@@ -131,7 +131,6 @@
         <!--Navigation Controller-->
         <scene sceneID="f3W-Fr-Ka0">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dZp-r2-30w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="gst-c5-neH" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="egk-pg-TVx">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
@@ -141,6 +140,7 @@
                         <segue destination="c4r-o2-EB7" kind="relationship" relationship="rootViewController" id="Fxq-7Y-tfZ"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZp-r2-30w" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3466" y="1691"/>
         </scene>
@@ -212,8 +212,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Item Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oxQ-zm-Hb9">
-                                <rect key="frame" x="16" y="427" width="340" height="108"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oxQ-zm-Hb9">
+                                <rect key="frame" x="16" y="449" width="340" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -228,6 +228,13 @@
                                     <action selector="onAddItem:" destination="c4r-o2-EB7" eventType="touchUpInside" id="QG5-WH-bi1"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lFz-At-vTk">
+                                <rect key="frame" x="16" y="426" width="130" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Own-J3-yFi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
