@@ -24,6 +24,10 @@ GARAGE is an app that allows a user to decrease clutter in their house by puttin
 
 ## Current Progress
 
+TODO: shift view up when keyboard pops up so it doesnt cover where you're typing
+
+<img src="./readme_assets/gifs/day1.gif" width=200 height=500>
+
 ## Product Spec
 
 ### 1. User Stories (Required and Optional)
