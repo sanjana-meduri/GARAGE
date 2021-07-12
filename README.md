@@ -29,28 +29,33 @@
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
+
 - [x] user login
 - [x] user signup
-- [ ] logout
-- [ ] user persistence
+- [x] user logout
+- [x] user persistence
+- [x] two tabs: "browse" and "my garage"
+- [x] add item to Parse backend
+- [ ] view current inventory
+- [ ] view current items for sale
+- [ ] browse all available items to buy
+- [ ] search avaiable items by keyword
+- [ ] search users
+- [ ] tap on seller name to view seller page
+- [ ] filter browse results by tab
+- [ ] listing detail page with google maps sdk
 
-* Login/Sign Up/Logout
-* View list of items available to buy
-* View list of items available to rent
-* Details page of an item
-* Search for User
-* Search for Item
-* Filter by Tags
-* Add an Item to your garage
-* start sale
-* page that shows items for sale
-* page that shows items in your garage
-* pull to refresh table views
+
 
 **Optional Nice-to-have Stories**
+- [ ] rent option
+- [ ] message a seller
+- [ ] favorite item
+- [ ] add multiple tags to an item
+- [ ] browse available tags to filter by
+- [ ] upload user profile picture
+- [ ] add multiple images for each listing
 
-* [fill in your required user stories here]
-* ...
 
 ### 2. Screen Archetypes
 
