@@ -11,7 +11,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -85,7 +85,7 @@
         <!--My Garage-->
         <scene sceneID="C0d-46-04Q">
             <objects>
-                <viewController id="kPw-oQ-OPW" sceneMemberID="viewController">
+                <viewController id="kPw-oQ-OPW" customClass="MyGarageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1Mv-X5-K7u">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,7 +116,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="My Garage" image="house" catalog="system" id="oeG-jL-awI"/>
-                    <navigationItem key="navigationItem" title="My Garage" id="lbH-mw-l4s"/>
+                    <navigationItem key="navigationItem" title="My Garage" id="lbH-mw-l4s">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="GMJ-B5-Som">
+                            <connections>
+                                <action selector="onLogout:" destination="kPw-oQ-OPW" id="zWb-sn-vex"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kkx-aP-fJO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
