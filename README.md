@@ -29,6 +29,10 @@
 ### 1. User Stories (Required and Optional)
 
 **Required Must-have Stories**
+- [x] user login
+- [x] user signup
+- [ ] logout
+- [ ] user persistence
 
 * Login/Sign Up/Logout
 * View list of items available to buy
