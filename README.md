@@ -11,11 +11,9 @@
 
 ### Description
 
-[Description of your app]
+GARAGE is an app that allows a user to decrease clutter in their house by putting items up for sale. This app allows users to maintain an inventory of items they want to sell, and gives them the option to actually sell those items as well. For a user that is looking to buy an item, there is also a browse page, in which users can filter their what they are looking for, and can then buy items that other users have put up for sale.
 
 ### App Evaluation
-
-[Evaluation of your app across the following attributes]
 
 - **Category:**
 - **Mobile:**
@@ -23,6 +21,8 @@
 - **Market:**
 - **Habit:**
 - **Scope:**
+
+## Current Progress
 
 ## Product Spec
 
@@ -86,7 +86,9 @@
 ## Wireframes
 
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+<img src="/readme_assets/login_page" width=600>
+<img src="/readme_assets/browse_page" width=600>
+<img src="/readme_assets/my_garage_page" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
