@@ -1,0 +1,748 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A50CA8E6D80774611EF7EB63 /* Pods_GARAGE_GARAGEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915477754A59D99C3CB719A6 /* Pods_GARAGE_GARAGEUITests.framework */; };
+		E40BBD98269C929F0039166B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBD97269C929F0039166B /* AppDelegate.m */; };
+		E40BBD9B269C929F0039166B /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBD9A269C929F0039166B /* SceneDelegate.m */; };
+		E40BBD9E269C929F0039166B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBD9D269C929F0039166B /* ViewController.m */; };
+		E40BBDA1269C929F0039166B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E40BBD9F269C929F0039166B /* Main.storyboard */; };
+		E40BBDA3269C929F0039166B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E40BBDA2269C929F0039166B /* Assets.xcassets */; };
+		E40BBDA6269C929F0039166B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E40BBDA4269C929F0039166B /* LaunchScreen.storyboard */; };
+		E40BBDA9269C929F0039166B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBDA8269C929F0039166B /* main.m */; };
+		E40BBDB3269C92A00039166B /* GARAGETests.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBDB2269C92A00039166B /* GARAGETests.m */; };
+		E40BBDBE269C92A00039166B /* GARAGEUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBDBD269C92A00039166B /* GARAGEUITests.m */; };
+		E807503C96B180FA6E544C26 /* Pods_GARAGETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20A1572884F735ED9304F12 /* Pods_GARAGETests.framework */; };
+		F8F45CA44A2F71365FE83C8D /* Pods_GARAGE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3277E5859260693649C161A7 /* Pods_GARAGE.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E40BBDAF269C92A00039166B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E40BBD8B269C929F0039166B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E40BBD92269C929F0039166B;
+			remoteInfo = GARAGE;
+		};
+		E40BBDBA269C92A00039166B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E40BBD8B269C929F0039166B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E40BBD92269C929F0039166B;
+			remoteInfo = GARAGE;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3277E5859260693649C161A7 /* Pods_GARAGE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GARAGE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		510901BA822F2FD3DF886D2F /* Pods-GARAGE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GARAGE.debug.xcconfig"; path = "Target Support Files/Pods-GARAGE/Pods-GARAGE.debug.xcconfig"; sourceTree = "<group>"; };
+		73718A4681EC3BAC8272C163 /* Pods-GARAGE-GARAGEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GARAGE-GARAGEUITests.debug.xcconfig"; path = "Target Support Files/Pods-GARAGE-GARAGEUITests/Pods-GARAGE-GARAGEUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		915477754A59D99C3CB719A6 /* Pods_GARAGE_GARAGEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GARAGE_GARAGEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		989CE57A1A9970EE511DC7D9 /* Pods-GARAGETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GARAGETests.debug.xcconfig"; path = "Target Support Files/Pods-GARAGETests/Pods-GARAGETests.debug.xcconfig"; sourceTree = "<group>"; };
+		A0B4394E63AD219542862DA4 /* Pods-GARAGE-GARAGEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GARAGE-GARAGEUITests.release.xcconfig"; path = "Target Support Files/Pods-GARAGE-GARAGEUITests/Pods-GARAGE-GARAGEUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A7D4EBDCCD333B4348C58C5F /* Pods-GARAGE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GARAGE.release.xcconfig"; path = "Target Support Files/Pods-GARAGE/Pods-GARAGE.release.xcconfig"; sourceTree = "<group>"; };
+		CD462101E0B8222E0ED4B727 /* Pods-GARAGETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GARAGETests.release.xcconfig"; path = "Target Support Files/Pods-GARAGETests/Pods-GARAGETests.release.xcconfig"; sourceTree = "<group>"; };
+		E20A1572884F735ED9304F12 /* Pods_GARAGETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GARAGETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E40BBD93269C929F0039166B /* GARAGE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GARAGE.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E40BBD96269C929F0039166B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E40BBD97269C929F0039166B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E40BBD99269C929F0039166B /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		E40BBD9A269C929F0039166B /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		E40BBD9C269C929F0039166B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E40BBD9D269C929F0039166B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E40BBDA0269C929F0039166B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E40BBDA2269C929F0039166B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E40BBDA5269C929F0039166B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E40BBDA7269C929F0039166B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E40BBDA8269C929F0039166B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E40BBDAE269C92A00039166B /* GARAGETests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GARAGETests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E40BBDB2269C92A00039166B /* GARAGETests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GARAGETests.m; sourceTree = "<group>"; };
+		E40BBDB4269C92A00039166B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E40BBDB9269C92A00039166B /* GARAGEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GARAGEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E40BBDBD269C92A00039166B /* GARAGEUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GARAGEUITests.m; sourceTree = "<group>"; };
+		E40BBDBF269C92A00039166B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E40BBD90269C929F0039166B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8F45CA44A2F71365FE83C8D /* Pods_GARAGE.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E40BBDAB269C92A00039166B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E807503C96B180FA6E544C26 /* Pods_GARAGETests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E40BBDB6269C92A00039166B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A50CA8E6D80774611EF7EB63 /* Pods_GARAGE_GARAGEUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6F34D31C210D5ACCA11C8A7C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				510901BA822F2FD3DF886D2F /* Pods-GARAGE.debug.xcconfig */,
+				A7D4EBDCCD333B4348C58C5F /* Pods-GARAGE.release.xcconfig */,
+				73718A4681EC3BAC8272C163 /* Pods-GARAGE-GARAGEUITests.debug.xcconfig */,
+				A0B4394E63AD219542862DA4 /* Pods-GARAGE-GARAGEUITests.release.xcconfig */,
+				989CE57A1A9970EE511DC7D9 /* Pods-GARAGETests.debug.xcconfig */,
+				CD462101E0B8222E0ED4B727 /* Pods-GARAGETests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CEB30F7204ED2137B010EC00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3277E5859260693649C161A7 /* Pods_GARAGE.framework */,
+				915477754A59D99C3CB719A6 /* Pods_GARAGE_GARAGEUITests.framework */,
+				E20A1572884F735ED9304F12 /* Pods_GARAGETests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E40BBD8A269C929F0039166B = {
+			isa = PBXGroup;
+			children = (
+				E40BBD95269C929F0039166B /* GARAGE */,
+				E40BBDB1269C92A00039166B /* GARAGETests */,
+				E40BBDBC269C92A00039166B /* GARAGEUITests */,
+				E40BBD94269C929F0039166B /* Products */,
+				6F34D31C210D5ACCA11C8A7C /* Pods */,
+				CEB30F7204ED2137B010EC00 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E40BBD94269C929F0039166B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E40BBD93269C929F0039166B /* GARAGE.app */,
+				E40BBDAE269C92A00039166B /* GARAGETests.xctest */,
+				E40BBDB9269C92A00039166B /* GARAGEUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E40BBD95269C929F0039166B /* GARAGE */ = {
+			isa = PBXGroup;
+			children = (
+				E40BBD96269C929F0039166B /* AppDelegate.h */,
+				E40BBD97269C929F0039166B /* AppDelegate.m */,
+				E40BBD99269C929F0039166B /* SceneDelegate.h */,
+				E40BBD9A269C929F0039166B /* SceneDelegate.m */,
+				E40BBD9C269C929F0039166B /* ViewController.h */,
+				E40BBD9D269C929F0039166B /* ViewController.m */,
+				E40BBD9F269C929F0039166B /* Main.storyboard */,
+				E40BBDA2269C929F0039166B /* Assets.xcassets */,
+				E40BBDA4269C929F0039166B /* LaunchScreen.storyboard */,
+				E40BBDA7269C929F0039166B /* Info.plist */,
+				E40BBDA8269C929F0039166B /* main.m */,
+			);
+			path = GARAGE;
+			sourceTree = "<group>";
+		};
+		E40BBDB1269C92A00039166B /* GARAGETests */ = {
+			isa = PBXGroup;
+			children = (
+				E40BBDB2269C92A00039166B /* GARAGETests.m */,
+				E40BBDB4269C92A00039166B /* Info.plist */,
+			);
+			path = GARAGETests;
+			sourceTree = "<group>";
+		};
+		E40BBDBC269C92A00039166B /* GARAGEUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E40BBDBD269C92A00039166B /* GARAGEUITests.m */,
+				E40BBDBF269C92A00039166B /* Info.plist */,
+			);
+			path = GARAGEUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E40BBD92269C929F0039166B /* GARAGE */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E40BBDC2269C92A00039166B /* Build configuration list for PBXNativeTarget "GARAGE" */;
+			buildPhases = (
+				16472824249C16DFC4D3B690 /* [CP] Check Pods Manifest.lock */,
+				E40BBD8F269C929F0039166B /* Sources */,
+				E40BBD90269C929F0039166B /* Frameworks */,
+				E40BBD91269C929F0039166B /* Resources */,
+				BB24F80BDB8F3A320DDF9B69 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GARAGE;
+			productName = GARAGE;
+			productReference = E40BBD93269C929F0039166B /* GARAGE.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E40BBDAD269C92A00039166B /* GARAGETests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E40BBDC5269C92A00039166B /* Build configuration list for PBXNativeTarget "GARAGETests" */;
+			buildPhases = (
+				0AF17AAD892307C3A1938BFE /* [CP] Check Pods Manifest.lock */,
+				E40BBDAA269C92A00039166B /* Sources */,
+				E40BBDAB269C92A00039166B /* Frameworks */,
+				E40BBDAC269C92A00039166B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E40BBDB0269C92A00039166B /* PBXTargetDependency */,
+			);
+			name = GARAGETests;
+			productName = GARAGETests;
+			productReference = E40BBDAE269C92A00039166B /* GARAGETests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E40BBDB8269C92A00039166B /* GARAGEUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E40BBDC8269C92A00039166B /* Build configuration list for PBXNativeTarget "GARAGEUITests" */;
+			buildPhases = (
+				03D141054813E2DCFA7C073A /* [CP] Check Pods Manifest.lock */,
+				E40BBDB5269C92A00039166B /* Sources */,
+				E40BBDB6269C92A00039166B /* Frameworks */,
+				E40BBDB7269C92A00039166B /* Resources */,
+				5709F9E47A20B97A6BE3495B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E40BBDBB269C92A00039166B /* PBXTargetDependency */,
+			);
+			name = GARAGEUITests;
+			productName = GARAGEUITests;
+			productReference = E40BBDB9269C92A00039166B /* GARAGEUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E40BBD8B269C929F0039166B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					E40BBD92269C929F0039166B = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					E40BBDAD269C92A00039166B = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = E40BBD92269C929F0039166B;
+					};
+					E40BBDB8269C92A00039166B = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = E40BBD92269C929F0039166B;
+					};
+				};
+			};
+			buildConfigurationList = E40BBD8E269C929F0039166B /* Build configuration list for PBXProject "GARAGE" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E40BBD8A269C929F0039166B;
+			productRefGroup = E40BBD94269C929F0039166B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E40BBD92269C929F0039166B /* GARAGE */,
+				E40BBDAD269C92A00039166B /* GARAGETests */,
+				E40BBDB8269C92A00039166B /* GARAGEUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E40BBD91269C929F0039166B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E40BBDA6269C929F0039166B /* LaunchScreen.storyboard in Resources */,
+				E40BBDA3269C929F0039166B /* Assets.xcassets in Resources */,
+				E40BBDA1269C929F0039166B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E40BBDAC269C92A00039166B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E40BBDB7269C92A00039166B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		03D141054813E2DCFA7C073A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GARAGE-GARAGEUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0AF17AAD892307C3A1938BFE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GARAGETests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		16472824249C16DFC4D3B690 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GARAGE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5709F9E47A20B97A6BE3495B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GARAGE-GARAGEUITests/Pods-GARAGE-GARAGEUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GARAGE-GARAGEUITests/Pods-GARAGE-GARAGEUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GARAGE-GARAGEUITests/Pods-GARAGE-GARAGEUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BB24F80BDB8F3A320DDF9B69 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GARAGE/Pods-GARAGE-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GARAGE/Pods-GARAGE-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GARAGE/Pods-GARAGE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E40BBD8F269C929F0039166B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E40BBD9E269C929F0039166B /* ViewController.m in Sources */,
+				E40BBD98269C929F0039166B /* AppDelegate.m in Sources */,
+				E40BBDA9269C929F0039166B /* main.m in Sources */,
+				E40BBD9B269C929F0039166B /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E40BBDAA269C92A00039166B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E40BBDB3269C92A00039166B /* GARAGETests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E40BBDB5269C92A00039166B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E40BBDBE269C92A00039166B /* GARAGEUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E40BBDB0269C92A00039166B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E40BBD92269C929F0039166B /* GARAGE */;
+			targetProxy = E40BBDAF269C92A00039166B /* PBXContainerItemProxy */;
+		};
+		E40BBDBB269C92A00039166B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E40BBD92269C929F0039166B /* GARAGE */;
+			targetProxy = E40BBDBA269C92A00039166B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E40BBD9F269C929F0039166B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E40BBDA0269C929F0039166B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E40BBDA4269C929F0039166B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E40BBDA5269C929F0039166B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E40BBDC0269C92A00039166B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E40BBDC1269C92A00039166B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E40BBDC3269C92A00039166B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 510901BA822F2FD3DF886D2F /* Pods-GARAGE.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7T7B37B46A;
+				INFOPLIST_FILE = GARAGE/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanjanameduri.GARAGE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E40BBDC4269C92A00039166B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7D4EBDCCD333B4348C58C5F /* Pods-GARAGE.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7T7B37B46A;
+				INFOPLIST_FILE = GARAGE/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanjanameduri.GARAGE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E40BBDC6269C92A00039166B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 989CE57A1A9970EE511DC7D9 /* Pods-GARAGETests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7T7B37B46A;
+				INFOPLIST_FILE = GARAGETests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanjanameduri.GARAGETests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GARAGE.app/GARAGE";
+			};
+			name = Debug;
+		};
+		E40BBDC7269C92A00039166B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CD462101E0B8222E0ED4B727 /* Pods-GARAGETests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7T7B37B46A;
+				INFOPLIST_FILE = GARAGETests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanjanameduri.GARAGETests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GARAGE.app/GARAGE";
+			};
+			name = Release;
+		};
+		E40BBDC9269C92A00039166B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73718A4681EC3BAC8272C163 /* Pods-GARAGE-GARAGEUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7T7B37B46A;
+				INFOPLIST_FILE = GARAGEUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanjanameduri.GARAGEUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GARAGE;
+			};
+			name = Debug;
+		};
+		E40BBDCA269C92A00039166B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A0B4394E63AD219542862DA4 /* Pods-GARAGE-GARAGEUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7T7B37B46A;
+				INFOPLIST_FILE = GARAGEUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sanjanameduri.GARAGEUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GARAGE;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E40BBD8E269C929F0039166B /* Build configuration list for PBXProject "GARAGE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E40BBDC0269C92A00039166B /* Debug */,
+				E40BBDC1269C92A00039166B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E40BBDC2269C92A00039166B /* Build configuration list for PBXNativeTarget "GARAGE" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E40BBDC3269C92A00039166B /* Debug */,
+				E40BBDC4269C92A00039166B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E40BBDC5269C92A00039166B /* Build configuration list for PBXNativeTarget "GARAGETests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E40BBDC6269C92A00039166B /* Debug */,
+				E40BBDC7269C92A00039166B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E40BBDC8269C92A00039166B /* Build configuration list for PBXNativeTarget "GARAGEUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E40BBDC9269C92A00039166B /* Debug */,
+				E40BBDCA269C92A00039166B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E40BBD8B269C929F0039166B /* Project object */;
+}

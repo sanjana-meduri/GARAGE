@@ -1,0 +1,6 @@
+framework module Pods_GARAGE {
+  umbrella header "Pods-GARAGE-umbrella.h"
+
+  export *
+  module * { export * }
+}
