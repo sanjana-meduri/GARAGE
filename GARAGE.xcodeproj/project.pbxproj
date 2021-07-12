@@ -18,6 +18,7 @@
 		E40BBDBE269C92A00039166B /* GARAGEUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBDBD269C92A00039166B /* GARAGEUITests.m */; };
 		E4FE2C8C269C97DE001E0457 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C8B269C97DE001E0457 /* LoginViewController.m */; };
 		E4FE2C94269CA28E001E0457 /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C93269CA28E001E0457 /* Listing.m */; };
+		E4FE2C97269CA6F4001E0457 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C96269CA6F4001E0457 /* AddItemViewController.m */; };
 		E807503C96B180FA6E544C26 /* Pods_GARAGETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E20A1572884F735ED9304F12 /* Pods_GARAGETests.framework */; };
 		F8F45CA44A2F71365FE83C8D /* Pods_GARAGE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3277E5859260693649C161A7 /* Pods_GARAGE.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,8 @@
 		E4FE2C8B269C97DE001E0457 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E4FE2C92269CA28E001E0457 /* Listing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Listing.h; sourceTree = "<group>"; };
 		E4FE2C93269CA28E001E0457 /* Listing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Listing.m; sourceTree = "<group>"; };
+		E4FE2C95269CA6F4001E0457 /* AddItemViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddItemViewController.h; sourceTree = "<group>"; };
+		E4FE2C96269CA6F4001E0457 /* AddItemViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddItemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +189,8 @@
 			children = (
 				E4FE2C8A269C97DE001E0457 /* LoginViewController.h */,
 				E4FE2C8B269C97DE001E0457 /* LoginViewController.m */,
+				E4FE2C95269CA6F4001E0457 /* AddItemViewController.h */,
+				E4FE2C96269CA6F4001E0457 /* AddItemViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4FE2C8C269C97DE001E0457 /* LoginViewController.m in Sources */,
+				E4FE2C97269CA6F4001E0457 /* AddItemViewController.m in Sources */,
 				E4FE2C94269CA28E001E0457 /* Listing.m in Sources */,
 				E40BBD98269C929F0039166B /* AppDelegate.m in Sources */,
 				E40BBDA9269C929F0039166B /* main.m in Sources */,
