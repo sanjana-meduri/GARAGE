@@ -226,7 +226,13 @@
                         <viewLayoutGuide key="safeArea" id="Own-J3-yFi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Item" id="Jaa-WX-fHq"/>
+                    <navigationItem key="navigationItem" title="Add Item" id="Jaa-WX-fHq">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="nZP-7D-96V">
+                            <connections>
+                                <action selector="onCancel:" destination="c4r-o2-EB7" id="ZhF-ak-jXG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addressField" destination="cmO-22-ToS" id="0qY-oG-RFc"/>
                         <outlet property="conditionControl" destination="F3x-Xj-vEb" id="cPb-ep-vt0"/>

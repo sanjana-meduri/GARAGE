@@ -41,6 +41,10 @@
     [self getPicture:NO];
 }
 
+- (IBAction)onCancel:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
 - (IBAction)onAddItem:(id)sender {
     UIImage *itemImage = self.imageView.image;
     NSString *itemDescription = self.descriptionView.text;
