@@ -86,13 +86,16 @@ GARAGE is an app that allows a user to decrease clutter in their house by puttin
 ## Wireframes
 
 Login Page:
-<img src="./readme_assets/wireframes/login_screen.png" width=600>
+
+<img src="./readme_assets/wireframes/login_screen.png" width=600 height=600>
 
 Browse Tab:
-<img src="./readme_assets/wireframes/browse_page.png" width=600>
+
+<img src="./readme_assets/wireframes/browse_page.png" width=600 height=600>
 
 My Garage Tab:
-<img src="./readme_assets/wireframes/my_garage_page.png" width=600>
+
+<img src="./readme_assets/wireframes/my_garage_page.png" width=600 height=600>
 
 ### [BONUS] Digital Wireframes & Mockups
 
