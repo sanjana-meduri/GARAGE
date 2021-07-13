@@ -16,6 +16,8 @@
 		E40BBDA9269C929F0039166B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBDA8269C929F0039166B /* main.m */; };
 		E40BBDB3269C92A00039166B /* GARAGETests.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBDB2269C92A00039166B /* GARAGETests.m */; };
 		E40BBDBE269C92A00039166B /* GARAGEUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBDBD269C92A00039166B /* GARAGEUITests.m */; };
+		E43FD2F3269DEB31004BCBA4 /* MyInventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD2F2269DEB31004BCBA4 /* MyInventoryViewController.m */; };
+		E43FD2F6269DEC8F004BCBA4 /* InventoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD2F5269DEC8F004BCBA4 /* InventoryCell.m */; };
 		E4FE2C8C269C97DE001E0457 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C8B269C97DE001E0457 /* LoginViewController.m */; };
 		E4FE2C94269CA28E001E0457 /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C93269CA28E001E0457 /* Listing.m */; };
 		E4FE2C97269CA6F4001E0457 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C96269CA6F4001E0457 /* AddItemViewController.m */; };
@@ -67,6 +69,10 @@
 		E40BBDB9269C92A00039166B /* GARAGEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GARAGEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E40BBDBD269C92A00039166B /* GARAGEUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GARAGEUITests.m; sourceTree = "<group>"; };
 		E40BBDBF269C92A00039166B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E43FD2F1269DEB31004BCBA4 /* MyInventoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInventoryViewController.h; sourceTree = "<group>"; };
+		E43FD2F2269DEB31004BCBA4 /* MyInventoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyInventoryViewController.m; sourceTree = "<group>"; };
+		E43FD2F4269DEC8F004BCBA4 /* InventoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InventoryCell.h; sourceTree = "<group>"; };
+		E43FD2F5269DEC8F004BCBA4 /* InventoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InventoryCell.m; sourceTree = "<group>"; };
 		E4FE2C8A269C97DE001E0457 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E4FE2C8B269C97DE001E0457 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E4FE2C92269CA28E001E0457 /* Listing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Listing.h; sourceTree = "<group>"; };
@@ -196,6 +202,8 @@
 				E4FE2C96269CA6F4001E0457 /* AddItemViewController.m */,
 				E4FE2C98269CAE46001E0457 /* MyGarageViewController.h */,
 				E4FE2C99269CAE46001E0457 /* MyGarageViewController.m */,
+				E43FD2F1269DEB31004BCBA4 /* MyInventoryViewController.h */,
+				E43FD2F2269DEB31004BCBA4 /* MyInventoryViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -212,6 +220,8 @@
 		E4FE2C91269CA248001E0457 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E43FD2F4269DEC8F004BCBA4 /* InventoryCell.h */,
+				E43FD2F5269DEC8F004BCBA4 /* InventoryCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -454,7 +464,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4FE2C8C269C97DE001E0457 /* LoginViewController.m in Sources */,
+				E43FD2F3269DEB31004BCBA4 /* MyInventoryViewController.m in Sources */,
 				E4FE2C97269CA6F4001E0457 /* AddItemViewController.m in Sources */,
+				E43FD2F6269DEC8F004BCBA4 /* InventoryCell.m in Sources */,
 				E4FE2C94269CA28E001E0457 /* Listing.m in Sources */,
 				E4FE2C9A269CAE46001E0457 /* MyGarageViewController.m in Sources */,
 				E40BBD98269C929F0039166B /* AppDelegate.m in Sources */,

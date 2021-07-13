@@ -8,7 +8,7 @@
 #import "AddItemViewController.h"
 #import "Listing.h"
 
-@interface AddItemViewController () <UITextViewDelegate>
+@interface AddItemViewController () <UITextViewDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *priceField;
@@ -16,6 +16,8 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *conditionControl;
 @property (weak, nonatomic) IBOutlet UITextField *tagField;
 @property (weak, nonatomic) IBOutlet UITextField *addressField;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) UITextField *activeField;
 
 @end
 
@@ -25,7 +27,12 @@
     [super viewDidLoad];
     
     self.imageView.image = nil;
-    self.descriptionView.delegate = @"";
+    self.descriptionView.text = @"";
+    
+    self.nameField.delegate = self;
+    self.priceField.delegate = self;
+    self.tagField.delegate = self;
+    self.addressField.delegate = self;
     
     self.descriptionView.delegate = self;
     self.descriptionView.layer.borderWidth = 2.0f;
@@ -36,6 +43,62 @@
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
     gestureRecognizer.cancelsTouchesInView = NO;
+    
+    [self registerForKeyboardNotifications];
+    
+}
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+            selector:@selector(keyboardWasShown:)
+            name:UIKeyboardDidShowNotification object:nil];
+ 
+   [[NSNotificationCenter defaultCenter] addObserver:self
+             selector:@selector(keyboardWillBeHidden:)
+             name:UIKeyboardWillHideNotification object:nil];
+ 
+}
+
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    UIScrollView *scrollView = self.scrollView;
+    UITextField *activeField = self.activeField;
+    
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+ 
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    scrollView.contentInset = contentInsets;
+    scrollView.scrollIndicatorInsets = contentInsets;
+ 
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
+        [self.scrollView scrollRectToVisible:activeField.frame animated:YES];
+    }
+    self.scrollView = scrollView;
+}
+
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIScrollView *scrollView = self.scrollView;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    scrollView.contentInset = contentInsets;
+    scrollView.scrollIndicatorInsets = contentInsets;
+    
+    self.scrollView = scrollView;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    self.activeField = textField;
+}
+ 
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.activeField = nil;
 }
 
 - (void)dismissKeyboard
@@ -83,6 +146,7 @@
     }];
         
 }
+
 
 - (void) getPicture:(BOOL)willTakePicture{
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];

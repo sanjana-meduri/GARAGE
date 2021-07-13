@@ -10,6 +10,7 @@ target 'GARAGE' do
     pod 'Parse/UI'
     pod 'AFNetworking'	
     pod 'DateTools'
+    pod 'IQKeyboardManager'
 
   target 'GARAGETests' do
     inherit! :search_paths
