@@ -1,27 +1,23 @@
 //
-//  MyInventoryViewController.m
+//  ForSaleViewController.m
 //  GARAGE
 //
 //  Created by Sanjana Meduri on 7/13/21.
 //
 
-#import "MyInventoryViewController.h"
-#import "InventoryCell.h"
+#import "ForSaleViewController.h"
+#import "ForSaleCell.h"
 #import "Listing.h"
 #import "Parse/Parse.h"
 
-@interface MyInventoryViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface ForSaleViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UILabel *itemValueLabel;
-@property (weak, nonatomic) IBOutlet UILabel *itemTallyLabel;
 @property (strong, nonatomic) NSArray *listings;
 @property (strong, nonatomic) PFUser *user;
-@property (assign, nonatomic) NSTimeInterval lastClick;
-@property (strong, nonatomic) NSIndexPath *lastIndexPath;
 
 @end
 
-@implementation MyInventoryViewController
+@implementation ForSaleViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -32,13 +28,6 @@
     self.user = PFUser.currentUser;
     
     [self queryPosts];
-    
-    self.itemTallyLabel.text = [[NSString stringWithFormat:@"%lu", self.listings.count] stringByAppendingString:@"total items in inventory"];
-    
-}
-
-- (IBAction)onBack:(id)sender {
-    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 - (void) queryPosts{
@@ -59,7 +48,7 @@
     [query whereKey:@"seller" equalTo:self.user];
     
     NSNumber *alreadySoldTag = [NSNumber numberWithBool:FALSE];
-    NSNumber *inInventoryTag = [NSNumber numberWithBool:TRUE];
+    NSNumber *inInventoryTag = [NSNumber numberWithBool:FALSE];
     
     [query whereKey:@"alreadySold" equalTo:alreadySoldTag];
     [query whereKey:@"inInventory" equalTo:inInventoryTag];
@@ -70,7 +59,6 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *listings, NSError *error) {
         if (listings != nil) {
             self.listings = listings;
-            self.itemTallyLabel.text = [[NSString stringWithFormat:@"%lu", self.listings.count] stringByAppendingString:@" total items"];
             [self.tableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
@@ -80,7 +68,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    InventoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InventoryCell"];
+    ForSaleCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ForSaleCell"];
     
     Listing *listing = self.listings[indexPath.row];
     
@@ -98,30 +86,8 @@
     return self.listings.count;
 }
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSTimeInterval now = [[[NSDate alloc] init] timeIntervalSince1970];
-    if ((now - self.lastClick < 0.3) && [indexPath isEqual:self.lastIndexPath]) {
-        [self performSegueWithIdentifier:@"inventoryDetailsSegue" sender:nil];
-    }
-    self.lastClick = now;
-    self.lastIndexPath = indexPath;
-}
-
-- (IBAction)onStartSale:(id)sender {
-    for (Listing* listing in self.listings) {
-        listing.inInventory = FALSE;
-        
-        [listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
-                    if (succeeded) {
-                        NSLog(@"successfully put item up for sale");
-                    } else {
-                        NSLog(@"Problem starting sale: %@", error.localizedDescription);
-                    }}];
-    }
-    
-    [self queryPosts];
-    
-    [self.tableView reloadData];
+- (IBAction)onBack:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
 }
 
 /*

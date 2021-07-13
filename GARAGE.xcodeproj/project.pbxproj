@@ -18,6 +18,8 @@
 		E40BBDBE269C92A00039166B /* GARAGEUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBDBD269C92A00039166B /* GARAGEUITests.m */; };
 		E43FD2F3269DEB31004BCBA4 /* MyInventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD2F2269DEB31004BCBA4 /* MyInventoryViewController.m */; };
 		E43FD2F6269DEC8F004BCBA4 /* InventoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD2F5269DEC8F004BCBA4 /* InventoryCell.m */; };
+		E43FD2F9269E32B3004BCBA4 /* ForSaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD2F8269E32B3004BCBA4 /* ForSaleCell.m */; };
+		E43FD2FC269E32C9004BCBA4 /* ForSaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD2FB269E32C9004BCBA4 /* ForSaleViewController.m */; };
 		E4FE2C8C269C97DE001E0457 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C8B269C97DE001E0457 /* LoginViewController.m */; };
 		E4FE2C94269CA28E001E0457 /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C93269CA28E001E0457 /* Listing.m */; };
 		E4FE2C97269CA6F4001E0457 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C96269CA6F4001E0457 /* AddItemViewController.m */; };
@@ -73,6 +75,10 @@
 		E43FD2F2269DEB31004BCBA4 /* MyInventoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyInventoryViewController.m; sourceTree = "<group>"; };
 		E43FD2F4269DEC8F004BCBA4 /* InventoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InventoryCell.h; sourceTree = "<group>"; };
 		E43FD2F5269DEC8F004BCBA4 /* InventoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InventoryCell.m; sourceTree = "<group>"; };
+		E43FD2F7269E32B3004BCBA4 /* ForSaleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForSaleCell.h; sourceTree = "<group>"; };
+		E43FD2F8269E32B3004BCBA4 /* ForSaleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForSaleCell.m; sourceTree = "<group>"; };
+		E43FD2FA269E32C9004BCBA4 /* ForSaleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForSaleViewController.h; sourceTree = "<group>"; };
+		E43FD2FB269E32C9004BCBA4 /* ForSaleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForSaleViewController.m; sourceTree = "<group>"; };
 		E4FE2C8A269C97DE001E0457 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E4FE2C8B269C97DE001E0457 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E4FE2C92269CA28E001E0457 /* Listing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Listing.h; sourceTree = "<group>"; };
@@ -204,6 +210,8 @@
 				E4FE2C99269CAE46001E0457 /* MyGarageViewController.m */,
 				E43FD2F1269DEB31004BCBA4 /* MyInventoryViewController.h */,
 				E43FD2F2269DEB31004BCBA4 /* MyInventoryViewController.m */,
+				E43FD2FA269E32C9004BCBA4 /* ForSaleViewController.h */,
+				E43FD2FB269E32C9004BCBA4 /* ForSaleViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -222,6 +230,8 @@
 			children = (
 				E43FD2F4269DEC8F004BCBA4 /* InventoryCell.h */,
 				E43FD2F5269DEC8F004BCBA4 /* InventoryCell.m */,
+				E43FD2F7269E32B3004BCBA4 /* ForSaleCell.h */,
+				E43FD2F8269E32B3004BCBA4 /* ForSaleCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -463,7 +473,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E43FD2F9269E32B3004BCBA4 /* ForSaleCell.m in Sources */,
 				E4FE2C8C269C97DE001E0457 /* LoginViewController.m in Sources */,
+				E43FD2FC269E32C9004BCBA4 /* ForSaleViewController.m in Sources */,
 				E43FD2F3269DEB31004BCBA4 /* MyInventoryViewController.m in Sources */,
 				E4FE2C97269CA6F4001E0457 /* AddItemViewController.m in Sources */,
 				E43FD2F6269DEC8F004BCBA4 /* InventoryCell.m in Sources */,
