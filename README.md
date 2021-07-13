@@ -28,7 +28,7 @@ TODO: start sale button sometimes doesn't do all of the items -- i think it's be
 
 Shows what I did today specifically: 
 
-<img src="./readme_assets/gifs/day1.gif" width=200 height=500>
+<img src="./readme_assets/gifs/day2.gif" width=200 height=500>
 
 Yesterday's features:
 
