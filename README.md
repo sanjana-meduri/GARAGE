@@ -24,7 +24,13 @@ GARAGE is an app that allows a user to decrease clutter in their house by puttin
 
 ## Current Progress
 
-TODO: shift view up when keyboard pops up so it doesnt cover where you're typing
+TODO: start sale button sometimes doesn't do all of the items -- i think it's because the asynchronous pushing of the updated item to the database is finishing faster than the for loop gets to the next time
+
+Shows what I did today specifically: 
+
+<img src="./readme_assets/gifs/day1.gif" width=200 height=500>
+
+Yesterday's features:
 
 <img src="./readme_assets/gifs/day1.gif" width=200 height=500>
 
@@ -40,8 +46,9 @@ TODO: shift view up when keyboard pops up so it doesnt cover where you're typing
 - [x] user persistence
 - [x] two tabs: "browse" and "my garage"
 - [x] add item to Parse backend
-- [ ] view current inventory
-- [ ] view current items for sale
+- [x] start sale
+- [x] view current inventory
+- [x] view current items for sale
 - [ ] browse all available items to buy
 - [ ] search avaiable items by keyword
 - [ ] search users
