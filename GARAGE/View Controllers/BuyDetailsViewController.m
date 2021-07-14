@@ -30,6 +30,14 @@
     [super viewDidLoad];
     
     [self populateDetails];
+    
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onDoubleTap)];
+    doubleTap.numberOfTapsRequired = 2;
+    [self.addressLabel addGestureRecognizer:doubleTap];
+}
+
+- (void) onDoubleTap{
+    [self performSegueWithIdentifier:@"mapSegue" sender:nil];
 }
 
 - (void) populateDetails{

@@ -673,9 +673,6 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="08Q-q6-a7b" appends="YES" id="FEZ-j2-t5F"/>
-                                        </connections>
                                     </label>
                                 </subviews>
                                 <constraints>
@@ -699,14 +696,10 @@
                         <outlet property="nameLabel" destination="A0M-ah-UIL" id="l5M-P5-38m"/>
                         <outlet property="priceLabel" destination="Zyt-n8-2HV" id="IW2-7X-NU2"/>
                         <outlet property="sellerLabel" destination="8Cd-Dk-iCv" id="vR8-bW-Cff"/>
+                        <segue destination="MBd-ct-FVx" kind="presentation" identifier="mapSegue" id="FS0-kg-PZK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eD1-2I-Z3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="08Q-q6-a7b">
-                    <connections>
-                        <segue destination="MBd-ct-FVx" kind="presentation" identifier="mapSegue" id="Mhf-yd-m3t"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="6276.9230769230771" y="-1445.260663507109"/>
         </scene>
