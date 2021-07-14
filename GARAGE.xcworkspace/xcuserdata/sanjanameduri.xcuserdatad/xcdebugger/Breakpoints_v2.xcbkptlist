@@ -58,9 +58,9 @@
             filePath = "GARAGE/View Controllers/MyInventoryViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "-queryPosts"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "-queryListings"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,8 +74,8 @@
             filePath = "GARAGE/View Controllers/MyInventoryViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
@@ -90,9 +90,9 @@
             filePath = "GARAGE/View Controllers/MyInventoryViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "-queryPosts"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "-queryListings"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

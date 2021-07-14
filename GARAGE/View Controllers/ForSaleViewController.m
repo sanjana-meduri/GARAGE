@@ -10,10 +10,12 @@
 #import "Listing.h"
 #import "Parse/Parse.h"
 
-@interface ForSaleViewController ()
+@interface ForSaleViewController ()  <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *listings;
 @property (strong, nonatomic) PFUser *user;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
+
 
 @end
 
@@ -27,10 +29,15 @@
     
     self.user = PFUser.currentUser;
     
-    [self queryPosts];
+    [self queryListings];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl setTintColor:[UIColor blueColor]];
+    [self.refreshControl addTarget:self action:@selector(queryListings) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
 }
 
-- (void) queryPosts{
+- (void) queryListings{
     PFQuery *query = [PFQuery queryWithClassName:@"Listing"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"seller"];
@@ -65,6 +72,7 @@
         }
     }];
     [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

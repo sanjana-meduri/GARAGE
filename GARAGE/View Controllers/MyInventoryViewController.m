@@ -14,10 +14,13 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UILabel *itemValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *itemTallyLabel;
+@property (strong, nonatomic) IBOutlet UIView *view;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) NSArray *listings;
 @property (strong, nonatomic) PFUser *user;
 @property (assign, nonatomic) NSTimeInterval lastClick;
 @property (strong, nonatomic) NSIndexPath *lastIndexPath;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -31,14 +34,19 @@
     
     self.user = PFUser.currentUser;
     
-    [self queryPosts];
+    [self queryListings];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl setTintColor:[UIColor blueColor]];
+    [self.refreshControl addTarget:self action:@selector(queryListings) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
 }
 
 - (IBAction)onBack:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }
 
-- (void) queryPosts{
+- (void) queryListings{
     PFQuery *query = [PFQuery queryWithClassName:@"Listing"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"seller"];
@@ -82,6 +90,7 @@
         }
     }];
     [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -119,7 +128,7 @@
         [listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
                     if (succeeded) {
                         NSLog(@"successfully put item up for sale");
-                        [self queryPosts];
+                        [self queryListings];
                         [self.tableView reloadData];
                     } else {
                         NSLog(@"Problem starting sale: %@", error.localizedDescription);
