@@ -51,12 +51,13 @@ Yesterday's features:
 - [x] view current items for sale
 - [x] refresh controls in current inventory
 - [x] refresh controls in current items for sale
-- [ ] browse all available items to buy
+- [x] browse all available items to buy
 - [ ] search avaiable items by keyword
 - [ ] search users
 - [ ] tap on seller name to view seller page
-- [ ] filter browse results by tab
-- [ ] listing detail page with google maps sdk
+- [ ] filter browse results by tag
+- [ ] listing detail page 
+    - [ ] with google maps sdk
 
 
 
