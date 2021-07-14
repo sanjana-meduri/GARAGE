@@ -8,6 +8,7 @@
 #import "AppDelegate.h"
 #import "Parse/Parse.h"
 @import GoogleMaps;
+@import GooglePlaces;
 
 @interface AppDelegate ()
 
@@ -26,7 +27,7 @@
         [Parse initializeWithConfiguration:config];
     
     [GMSServices provideAPIKey:@"AIzaSyB3uTAyKC64dPGL_nnZpz0KPcm0PpFXyNc"];
-    //[GMSPlacesClient provideAPIKey:@"AIzaSyB3uTAyKC64dPGL_nnZpz0KPcm0PpFXyNc"];
+    [GMSPlacesClient provideAPIKey:@"AIzaSyB3uTAyKC64dPGL_nnZpz0KPcm0PpFXyNc"];
 
 
     

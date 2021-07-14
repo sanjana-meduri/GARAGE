@@ -419,6 +419,9 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="street-address"/>
+                                        <connections>
+                                            <action selector="onAddressEditing:" destination="c4r-o2-EB7" eventType="editingDidBegin" id="cpw-Zm-2yf"/>
+                                        </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tag (e.g. Electronics, Kitchenware, etc.)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NgI-pR-t67">
                                         <rect key="frame" x="36" y="518" width="248" height="34"/>

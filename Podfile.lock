@@ -21,6 +21,7 @@ PODS:
   - GoogleMaps/Base (5.1.0)
   - GoogleMaps/Maps (5.1.0):
     - GoogleMaps/Base
+  - GooglePlaces (5.0.0)
   - IQKeyboardManager (6.5.6)
   - Parse (1.19.2):
     - Parse/Core (= 1.19.2)
@@ -33,6 +34,7 @@ DEPENDENCIES:
   - AFNetworking
   - DateTools
   - GoogleMaps (= 5.1.0)
+  - GooglePlaces
   - IQKeyboardManager
   - Parse
   - Parse/UI
@@ -43,6 +45,7 @@ SPEC REPOS:
     - Bolts
     - DateTools
     - GoogleMaps
+    - GooglePlaces
     - IQKeyboardManager
     - Parse
 
@@ -51,9 +54,10 @@ SPEC CHECKSUMS:
   Bolts: 8c1e8aab2f603387b8b9924f57d1d64f43d3ffdc
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   GoogleMaps: 086ae1dab659eaa7339bdb30fc88e2f44e7c597c
+  GooglePlaces: 5d87ca13ed98b7a937e0d8bc7026f718c7263271
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Parse: 081fb8755c3000fd11df817eec235def233d0af3
 
-PODFILE CHECKSUM: ceb869af50169d67ce715919f90df554af3fe8b8
+PODFILE CHECKSUM: f68072ec986135a88e93bddcd1bac1f27be07040
 
 COCOAPODS: 1.10.1

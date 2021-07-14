@@ -7,8 +7,9 @@
 
 #import "AddItemViewController.h"
 #import "Listing.h"
+@import GooglePlaces;
 
-@interface AddItemViewController () <UITextViewDelegate, UITextFieldDelegate>
+@interface AddItemViewController () <UITextViewDelegate, UITextFieldDelegate, GMSAutocompleteViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *priceField;
@@ -104,6 +105,55 @@
 - (void)dismissKeyboard
 {
      [self.view endEditing:YES];
+}
+
+- (IBAction)onAddressEditing:(id)sender {
+    GMSAutocompleteViewController *acController = [[GMSAutocompleteViewController alloc] init];
+      acController.delegate = self;
+
+      // Specify the place data types to return.
+      GMSPlaceField fields = (GMSPlaceFieldName | GMSPlaceFieldPlaceID);
+      acController.placeFields = fields;
+
+      // Specify a filter.
+      GMSAutocompleteFilter *filter = [[GMSAutocompleteFilter alloc] init];
+      filter.type = kGMSPlacesAutocompleteTypeFilterAddress;
+      acController.autocompleteFilter = filter;
+
+      // Display the autocomplete view controller.
+      [self presentViewController:acController animated:YES completion:nil];
+}
+
+- (void)viewController:(GMSAutocompleteViewController *)viewController
+didAutocompleteWithPlace:(GMSPlace *)place {
+  [self dismissViewControllerAnimated:YES completion:nil];
+  
+    [self.addressField setText:place.name];
+    
+  NSLog(@"Place name %@", place.name);
+  NSLog(@"Place ID %@", place.placeID);
+  NSLog(@"Place attributions %@", place.attributions.string);
+}
+
+- (void)viewController:(GMSAutocompleteViewController *)viewController
+didFailAutocompleteWithError:(NSError *)error {
+  [self dismissViewControllerAnimated:YES completion:nil];
+  
+  NSLog(@"Error: %@", [error description]);
+}
+
+  // User canceled the operation.
+- (void)wasCancelled:(GMSAutocompleteViewController *)viewController {
+  [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+  // Turn the network activity indicator on and off again.
+- (void)didRequestAutocompletePredictions:(GMSAutocompleteViewController *)viewController {
+  [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+}
+
+- (void)didUpdateAutocompletePredictions:(GMSAutocompleteViewController *)viewController {
+  [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 - (IBAction)onTakePicture:(id)sender {
