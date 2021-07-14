@@ -11,6 +11,7 @@ target 'GARAGE' do
     pod 'AFNetworking'	
     pod 'DateTools'
     pod 'IQKeyboardManager'
+    pod 'GoogleMaps', '5.1.0'
 
   target 'GARAGETests' do
     inherit! :search_paths

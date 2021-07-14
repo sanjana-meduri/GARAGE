@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "Listing.h"
 #import "NSDate+DateTools.h"
+#import "BuyMapViewController.h"
 
 @interface BuyDetailsViewController ()
 @property (weak, nonatomic) IBOutlet PFImageView *imageView;
@@ -49,16 +50,19 @@
     
     self.imageView.file = self.listing.image;
     [self.imageView loadInBackground];
+
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqual:@"mapSegue"]){
+        BuyMapViewController *mapViewController = [segue destinationViewController];
+        mapViewController.listing = self.listing;
+    }
 }
-*/
+
 
 @end

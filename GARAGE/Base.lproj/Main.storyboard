@@ -667,14 +667,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Rd-zn-38h">
-                                        <rect key="frame" x="36" y="506" width="63" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Rd-zn-38h">
+                                        <rect key="frame" x="36" y="506.66666666666669" width="355" height="20.333333333333314"/>
+                                        <gestureRecognizers/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="08Q-q6-a7b" appends="YES" id="FEZ-j2-t5F"/>
+                                        </connections>
                                     </label>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="uS3-44-nYE" firstAttribute="bottom" secondItem="6Rd-zn-38h" secondAttribute="bottom" constant="283" id="Lhk-Os-MzN"/>
+                                    <constraint firstItem="uS3-44-nYE" firstAttribute="trailing" secondItem="6Rd-zn-38h" secondAttribute="trailing" constant="39" id="Or9-w2-60o"/>
+                                    <constraint firstItem="6Rd-zn-38h" firstAttribute="leading" secondItem="uS3-44-nYE" secondAttribute="leading" constant="36" id="Rv3-wM-9W7"/>
+                                </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="in6-uL-TnY"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="uS3-44-nYE"/>
                             </scrollView>
@@ -694,8 +702,42 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eD1-2I-Z3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="08Q-q6-a7b">
+                    <connections>
+                        <segue destination="MBd-ct-FVx" kind="presentation" identifier="mapSegue" id="Mhf-yd-m3t"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="6276.9230769230771" y="-1445.260663507109"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="n32-Hq-pwj">
+            <objects>
+                <viewController storyboardIdentifier="BuyMapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MBd-ct-FVx" customClass="BuyMapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XdG-ex-W77">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oaO-9p-vJc">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="56"/>
+                                <items>
+                                    <navigationItem title="Map" id="0b1-p7-uB4"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iRz-Zw-ras"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oaO-9p-vJc" firstAttribute="leading" secondItem="iRz-Zw-ras" secondAttribute="leading" id="IDq-4c-r32"/>
+                            <constraint firstItem="oaO-9p-vJc" firstAttribute="trailing" secondItem="iRz-Zw-ras" secondAttribute="trailing" id="MS0-2l-ZCL"/>
+                            <constraint firstItem="oaO-9p-vJc" firstAttribute="top" secondItem="iRz-Zw-ras" secondAttribute="top" id="z0n-wA-Sgl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="0dV-dL-MoV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nE5-RV-HDA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7157" y="-1445"/>
         </scene>
         <!--Browse-->
         <scene sceneID="fWD-oo-pXn">

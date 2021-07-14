@@ -24,6 +24,7 @@
 		E43FD305269F3B64004BCBA4 /* BuyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD304269F3B64004BCBA4 /* BuyViewController.m */; };
 		E43FD308269F3B7D004BCBA4 /* BuyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD307269F3B7D004BCBA4 /* BuyCell.m */; };
 		E43FD30B269F414E004BCBA4 /* BuyDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD30A269F414E004BCBA4 /* BuyDetailsViewController.m */; };
+		E43FD30E269F49BC004BCBA4 /* BuyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD30D269F49BC004BCBA4 /* BuyMapViewController.m */; };
 		E4FE2C8C269C97DE001E0457 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C8B269C97DE001E0457 /* LoginViewController.m */; };
 		E4FE2C94269CA28E001E0457 /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C93269CA28E001E0457 /* Listing.m */; };
 		E4FE2C97269CA6F4001E0457 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C96269CA6F4001E0457 /* AddItemViewController.m */; };
@@ -91,6 +92,8 @@
 		E43FD307269F3B7D004BCBA4 /* BuyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyCell.m; sourceTree = "<group>"; };
 		E43FD309269F414E004BCBA4 /* BuyDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyDetailsViewController.h; sourceTree = "<group>"; };
 		E43FD30A269F414E004BCBA4 /* BuyDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyDetailsViewController.m; sourceTree = "<group>"; };
+		E43FD30C269F49BC004BCBA4 /* BuyMapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuyMapViewController.h; sourceTree = "<group>"; };
+		E43FD30D269F49BC004BCBA4 /* BuyMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyMapViewController.m; sourceTree = "<group>"; };
 		E4FE2C8A269C97DE001E0457 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E4FE2C8B269C97DE001E0457 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E4FE2C92269CA28E001E0457 /* Listing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Listing.h; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 				E43FD304269F3B64004BCBA4 /* BuyViewController.m */,
 				E43FD309269F414E004BCBA4 /* BuyDetailsViewController.h */,
 				E43FD30A269F414E004BCBA4 /* BuyDetailsViewController.m */,
+				E43FD30C269F49BC004BCBA4 /* BuyMapViewController.h */,
+				E43FD30D269F49BC004BCBA4 /* BuyMapViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				E40BBD90269C929F0039166B /* Frameworks */,
 				E40BBD91269C929F0039166B /* Resources */,
 				BB24F80BDB8F3A320DDF9B69 /* [CP] Embed Pods Frameworks */,
+				02FF682C6298066CA2C7AB62 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -306,6 +312,7 @@
 				E40BBDB6269C92A00039166B /* Frameworks */,
 				E40BBDB7269C92A00039166B /* Resources */,
 				5709F9E47A20B97A6BE3495B /* [CP] Embed Pods Frameworks */,
+				5DD21486526AB74CE5B70A92 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -386,6 +393,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		02FF682C6298066CA2C7AB62 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GARAGE/Pods-GARAGE-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GARAGE/Pods-GARAGE-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GARAGE/Pods-GARAGE-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		03D141054813E2DCFA7C073A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -469,6 +493,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GARAGE-GARAGEUITests/Pods-GARAGE-GARAGEUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		5DD21486526AB74CE5B70A92 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GARAGE-GARAGEUITests/Pods-GARAGE-GARAGEUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GARAGE-GARAGEUITests/Pods-GARAGE-GARAGEUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GARAGE-GARAGEUITests/Pods-GARAGE-GARAGEUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BB24F80BDB8F3A320DDF9B69 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -507,6 +548,7 @@
 				E40BBD98269C929F0039166B /* AppDelegate.m in Sources */,
 				E43FD305269F3B64004BCBA4 /* BuyViewController.m in Sources */,
 				E40BBDA9269C929F0039166B /* main.m in Sources */,
+				E43FD30E269F49BC004BCBA4 /* BuyMapViewController.m in Sources */,
 				E40BBD9B269C929F0039166B /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

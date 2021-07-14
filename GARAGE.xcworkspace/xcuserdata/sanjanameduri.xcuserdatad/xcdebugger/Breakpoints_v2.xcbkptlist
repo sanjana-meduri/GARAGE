@@ -106,8 +106,8 @@
             filePath = "GARAGE/View Controllers/BuyDetailsViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "-populateDetails"
             landmarkType = "7">
          </BreakpointContent>
