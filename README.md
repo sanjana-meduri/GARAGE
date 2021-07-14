@@ -46,18 +46,23 @@ Yesterday's features:
 - [x] user persistence
 - [x] two tabs: "browse" and "my garage"
 - [x] add item to Parse backend
+    - [x] use google places api to create autocomplete address text field
 - [x] start sale
 - [x] view current inventory
 - [x] view current items for sale
 - [x] refresh controls in current inventory
 - [x] refresh controls in current items for sale
 - [x] browse all available items to buy
+- [x] listing detail page 
+    - [x] double tap on address to show map 
+    - [x] use geocode api to get latitude and longitute from address string
+    - [x] put item address marker google maps sdk
+    - [ ] show current location marker on map
+    - [ ] use Directions API to show directions from current location to address 
 - [ ] search avaiable items by keyword
 - [ ] search users
 - [ ] tap on seller name to view seller page
 - [ ] filter browse results by tag
-- [ ] listing detail page 
-    - [ ] with google maps sdk
 
 
 
