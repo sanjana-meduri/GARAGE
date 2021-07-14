@@ -10,6 +10,7 @@
 @import GooglePlaces;
 
 @interface AddItemViewController () <UITextViewDelegate, UITextFieldDelegate, GMSAutocompleteViewControllerDelegate>
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
 @property (weak, nonatomic) IBOutlet UITextField *priceField;
@@ -107,51 +108,45 @@
      [self.view endEditing:YES];
 }
 
+//from google places docs
 - (IBAction)onAddressEditing:(id)sender {
     GMSAutocompleteViewController *acController = [[GMSAutocompleteViewController alloc] init];
-      acController.delegate = self;
+    acController.delegate = self;
 
-      // Specify the place data types to return.
-      GMSPlaceField fields = (GMSPlaceFieldName | GMSPlaceFieldPlaceID);
-      acController.placeFields = fields;
+    GMSPlaceField fields = (GMSPlaceFieldName | GMSPlaceFieldPlaceID);
+    acController.placeFields = fields;
 
-      // Specify a filter.
-      GMSAutocompleteFilter *filter = [[GMSAutocompleteFilter alloc] init];
-      filter.type = kGMSPlacesAutocompleteTypeFilterAddress;
-      acController.autocompleteFilter = filter;
+    GMSAutocompleteFilter *filter = [[GMSAutocompleteFilter alloc] init];
+    filter.type = kGMSPlacesAutocompleteTypeFilterAddress;
+    acController.autocompleteFilter = filter;
 
-      // Display the autocomplete view controller.
-      [self presentViewController:acController animated:YES completion:nil];
+    [self presentViewController:acController animated:YES completion:nil];
 }
 
-- (void)viewController:(GMSAutocompleteViewController *)viewController
-didAutocompleteWithPlace:(GMSPlace *)place {
-  [self dismissViewControllerAnimated:YES completion:nil];
+- (void)viewController:(GMSAutocompleteViewController *)viewController didAutocompleteWithPlace:(GMSPlace *)place {
+    [self dismissViewControllerAnimated:YES completion:nil];
   
     [self.addressField setText:place.name];
-    
-  NSLog(@"Place name %@", place.name);
-  NSLog(@"Place ID %@", place.placeID);
-  NSLog(@"Place attributions %@", place.attributions.string);
+
 }
 
-- (void)viewController:(GMSAutocompleteViewController *)viewController
-didFailAutocompleteWithError:(NSError *)error {
-  [self dismissViewControllerAnimated:YES completion:nil];
-  
-  NSLog(@"Error: %@", [error description]);
+//from google places docs
+- (void)viewController:(GMSAutocompleteViewController *)viewController didFailAutocompleteWithError:(NSError *)error {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"Error: %@", [error description]);
 }
 
-  // User canceled the operation.
+//from google places docs
 - (void)wasCancelled:(GMSAutocompleteViewController *)viewController {
   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-  // Turn the network activity indicator on and off again.
+//from google places docs
 - (void)didRequestAutocompletePredictions:(GMSAutocompleteViewController *)viewController {
   [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
 }
 
+//from google places docs
 - (void)didUpdateAutocompletePredictions:(GMSAutocompleteViewController *)viewController {
   [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
