@@ -26,14 +26,6 @@
     
     self.mapView.settings.myLocationButton = YES;
     self.mapView.myLocationEnabled = YES;
-    
-    self.locationManager = [[CLLocationManager alloc] init];
-    
-    self.locationManager.delegate = self;
-    
-    self.locationManager.distanceFilter = kCLDistanceFilterNone;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
-    [self.locationManager startUpdatingLocation];
 
     [self geocodeRequest];
 }
@@ -55,12 +47,6 @@
     GMSMarker *itemMarker = [GMSMarker markerWithPosition:CLLocationCoordinate2DMake(latitude, longitude)];
     itemMarker.title = @"Item Address";
     itemMarker.map = self.mapView;
-    
-//    double deviceLatitude = self.locationManager.location.coordinate.latitude;
-//    double deviceLongitude = self.locationManager.location.coordinate.longitude;
-//    GMSMarker *deviceMarker = [GMSMarker markerWithPosition:CLLocationCoordinate2DMake(deviceLatitude, deviceLongitude)];
-//    deviceMarker.title = @"My Location";
-//    deviceMarker.map = self.mapView;
     
     [self.mapView addObserver:self
                  forKeyPath:@"myLocation"
@@ -115,12 +101,14 @@
 }
 
 
+//from maps api docs
 - (void)dealloc {
   [self.mapView removeObserver:self
                 forKeyPath:@"myLocation"
                    context:NULL];
 }
 
+//from maps api docs
 #pragma mark - KVO updates
 
 - (void)observeValueForKeyPath:(NSString *)keyPath

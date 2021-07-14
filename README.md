@@ -24,13 +24,23 @@ GARAGE is an app that allows a user to decrease clutter in their house by puttin
 
 ## Current Progress
 
-TODO: start sale button sometimes doesn't do all of the items -- i think it's because the asynchronous pushing of the updated item to the database is finishing faster than the for loop gets to the next time
+TODO: keyboard covers some text fields in the add item page
 
-Shows what I did today specifically: 
+Today:
+
+<img src="./readme_assets/gifs/day3.gif" width=200 height=500>
+
+Challenges Solved Today:
+
+- fixed issue with asynchronous pushing of the updated item to the database finishing faster than the for loop gets to the next item when you click on start sale
+- url request to geocode api faililng, had to reformat url string and change security protocal for ATS
+- location manager to get current device location was not working -- had to research asynchronous dispatch on the maps docs
+- parse backend completely stopped working (i think it was because the current session i was using somehow got deleted) had to restart the session and rebuild
+
+Previous Features:
 
 <img src="./readme_assets/gifs/day2.gif" width=200 height=500>
 
-Yesterday's features:
 
 <img src="./readme_assets/gifs/day1.gif" width=200 height=500>
 
@@ -75,8 +85,11 @@ Yesterday's features:
 - [ ] add multiple tags to an item
 - [ ] browse available tags to filter by
 - [ ] upload user profile picture
+- [ ] user indicated preferred payment method
 - [ ] add multiple images for each listing
 - [ ] change default radius for browsing in settings
+- [ ] keep track of what user has sold and amount
+- [ ] add notification to seller
 
 
 ### 2. Screen Archetypes
