@@ -39,7 +39,7 @@
 
     
     CGRect f = self.view.frame;
-    CGRect mapFrame = CGRectMake(f.origin.x, 44, f.size.width, f.size.height);
+    CGRect mapFrame = CGRectMake(f.origin.x, 50, f.size.width, f.size.height);
     self.mapView = [GMSMapView mapWithFrame:mapFrame camera:camera];
     [self.view addSubview:self.mapView];
     
