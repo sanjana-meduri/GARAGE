@@ -69,6 +69,7 @@ Previous Features:
     - [x] put item address marker google maps sdk
     - [x] show current location on map
     - [ ] use Directions API to show directions from current location to address 
+- [ ] buy button on detail page that gives the seller's email address
 - [ ] search avaiable items by keyword
 - [ ] search users
 - [ ] tap on seller name to view seller page
