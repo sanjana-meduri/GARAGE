@@ -10,8 +10,9 @@
 #import "Listing.h"
 #import "Parse/Parse.h"
 
-@interface BuyViewController ()
+@interface BuyViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *listings;
 
 @end
 
@@ -19,11 +20,79 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+    [self queryListings];
 }
 
 - (IBAction)onBack:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
+}
+
+- (void) queryListings{
+    PFQuery *query = [PFQuery queryWithClassName:@"Listing"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"seller"];
+    [query includeKey:@"description"];
+    [query includeKey:@"alreadySold"];
+    [query includeKey:@"inInventory"];
+    [query includeKey:@"createdAt"];
+    [query includeKey:@"tag"];
+    [query includeKey:@"name"];
+    [query includeKey:@"condition"];
+    [query includeKey:@"image"];
+    [query includeKey:@"address"];
+    [query includeKey:@"price"];
+    
+    
+    NSNumber *alreadySoldTag = [NSNumber numberWithBool:FALSE];
+    NSNumber *inInventoryTag = [NSNumber numberWithBool:FALSE];
+    
+    [query whereKey:@"alreadySold" equalTo:alreadySoldTag];
+    [query whereKey:@"inInventory" equalTo:inInventoryTag];
+    
+    int numListings = 20;
+    query.limit = numListings;
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *listings, NSError *error) {
+        if (listings != nil) {
+            self.listings = listings;
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+    [self.tableView reloadData];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.listings.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    BuyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BuyCell"];
+    
+    Listing *listing = self.listings[indexPath.row];
+    
+    cell.imageView.file = listing.image;
+    [cell.imageView loadInBackground];
+    
+    cell.nameLabel.text = listing.name;
+    cell.priceLabel.text = [@"$" stringByAppendingString:[listing.price stringValue]];
+    
+    cell.sellerLabel.text = listing.seller[@"username"];
+    
+    NSDate *creationDate = listing.createdAt;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM/dd/yy"];
+    
+    NSString *stringFromDate = [formatter stringFromDate:creationDate];
+    
+    cell.dateLabel.text = stringFromDate;
+    
+    return cell;
 }
 
 /*
