@@ -49,6 +49,8 @@ Yesterday's features:
 - [x] start sale
 - [x] view current inventory
 - [x] view current items for sale
+- [x] refresh controls in current inventory
+- [x] refresh controls in current items for sale
 - [ ] browse all available items to buy
 - [ ] search avaiable items by keyword
 - [ ] search users
@@ -59,6 +61,8 @@ Yesterday's features:
 
 
 **Optional Nice-to-have Stories**
+
+- [ ] details page in MyGarage tab with option to delete item and start sale on individual item
 - [ ] rent option
 - [ ] message a seller
 - [ ] favorite item
@@ -66,6 +70,7 @@ Yesterday's features:
 - [ ] browse available tags to filter by
 - [ ] upload user profile picture
 - [ ] add multiple images for each listing
+- [ ] change default radius for browsing in settings
 
 
 ### 2. Screen Archetypes
