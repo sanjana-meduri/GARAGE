@@ -32,9 +32,6 @@
     self.user = PFUser.currentUser;
     
     [self queryPosts];
-    
-    self.itemTallyLabel.text = [[NSString stringWithFormat:@"%lu", self.listings.count] stringByAppendingString:@"total items in inventory"];
-    
 }
 
 - (IBAction)onBack:(id)sender {
@@ -70,7 +67,15 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *listings, NSError *error) {
         if (listings != nil) {
             self.listings = listings;
-            self.itemTallyLabel.text = [[NSString stringWithFormat:@"%lu", self.listings.count] stringByAppendingString:@" total items"];
+            
+            self.itemTallyLabel.text = [[NSString stringWithFormat:@"%lu", self.listings.count] stringByAppendingString:@" total items in inventory"];
+            
+            double totalValue = 0;
+            for (Listing* listing in self.listings){
+                totalValue += [listing.price doubleValue];
+            }
+            self.itemValueLabel.text = [@"Total Item Value: $" stringByAppendingString: [NSString stringWithFormat:@"%.2f", totalValue]];
+            
             [self.tableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
@@ -114,14 +119,12 @@
         [listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
                     if (succeeded) {
                         NSLog(@"successfully put item up for sale");
+                        [self queryPosts];
+                        [self.tableView reloadData];
                     } else {
                         NSLog(@"Problem starting sale: %@", error.localizedDescription);
                     }}];
     }
-    
-    [self queryPosts];
-    
-    [self.tableView reloadData];
 }
 
 /*
