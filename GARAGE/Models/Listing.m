@@ -13,7 +13,7 @@
 @dynamic userID;
 @dynamic seller;
 @dynamic name;
-@dynamic description;
+@dynamic details;
 @dynamic image;
 @dynamic price;
 @dynamic address;
@@ -31,7 +31,7 @@
     Listing *newListing = [Listing new];
     newListing.image = [self getPFFileFromImage:image];
     newListing.seller = [PFUser currentUser];
-    newListing.description = description;
+    newListing.details = description;
     newListing.name = name;
     newListing.price = price;
     newListing.address = address;

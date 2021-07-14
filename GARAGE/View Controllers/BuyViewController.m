@@ -9,11 +9,13 @@
 #import "BuyCell.h"
 #import "Listing.h"
 #import "Parse/Parse.h"
+#import "BuyDetailsViewController.h"
 
 @interface BuyViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray *listings;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) PFUser *user;
 
 @end
 
@@ -24,6 +26,8 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    self.user = PFUser.currentUser;
     
     [self queryListings];
     
@@ -58,6 +62,8 @@
     
     [query whereKey:@"alreadySold" equalTo:alreadySoldTag];
     [query whereKey:@"inInventory" equalTo:inInventoryTag];
+    
+    [query whereKey:@"seller" notEqualTo:self.user];
     
     int numListings = 20;
     query.limit = numListings;
@@ -102,14 +108,21 @@
     return cell;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqual:@"buyDetailsSegue"]){
+        BuyDetailsViewController *detailsViewController = [segue destinationViewController];
+        
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        
+        Listing *tappedListing = self.listings[indexPath.row];
+        detailsViewController.listing = tappedListing;
+    }
 }
-*/
+
 
 @end

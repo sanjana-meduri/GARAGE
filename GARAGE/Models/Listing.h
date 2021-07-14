@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *userID;
 @property (nonatomic, strong) PFUser *seller;
 
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *details;
 @property (nonatomic, assign) BOOL alreadySold;
 @property (nonatomic, assign) BOOL inInventory;
 @property (nonatomic, strong) NSString *tag;

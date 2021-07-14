@@ -583,6 +583,7 @@
                                             <outlet property="nameLabel" destination="jk9-AT-c4k" id="DIj-Td-xNn"/>
                                             <outlet property="priceLabel" destination="Dyd-Va-xAb" id="nPS-hn-5f7"/>
                                             <outlet property="sellerLabel" destination="wRU-z6-UoW" id="1jd-c3-hbi"/>
+                                            <segue destination="QOA-7W-IOq" kind="presentation" identifier="buyDetailsSegue" id="OCD-Ud-GcD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -607,6 +608,94 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kd0-o6-cxh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5453.8461538461534" y="-1445.260663507109"/>
+        </scene>
+        <!--Buy Details View Controller-->
+        <scene sceneID="oe7-Kt-Nsn">
+            <objects>
+                <viewController storyboardIdentifier="BuyDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QOA-7W-IOq" customClass="BuyDetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nip-V9-Z83">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kfs-Hh-SBV">
+                                <rect key="frame" x="-20" y="-20" width="430" height="810"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="doc" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Rnk-8K-96n" customClass="PFImageView">
+                                        <rect key="frame" x="20" y="20" width="390" height="209"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A0M-ah-UIL">
+                                        <rect key="frame" x="36" y="237" width="83" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cd-Dk-iCv">
+                                        <rect key="frame" x="36" y="278" width="43" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zyt-n8-2HV">
+                                        <rect key="frame" x="36" y="316" width="39" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Posting Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcX-uC-92J">
+                                        <rect key="frame" x="36" y="353" width="99" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEa-A3-y6t">
+                                        <rect key="frame" x="36" y="391" width="88" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Condition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bd-gZ-QVY">
+                                        <rect key="frame" x="36" y="461" width="74" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Rd-zn-38h">
+                                        <rect key="frame" x="36" y="506" width="63" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="in6-uL-TnY"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="uS3-44-nYE"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bh8-fa-4F1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="addressLabel" destination="6Rd-zn-38h" id="26G-PV-c0z"/>
+                        <outlet property="conditionLabel" destination="2bd-gZ-QVY" id="ogN-Bi-qdt"/>
+                        <outlet property="dateLabel" destination="EcX-uC-92J" id="ZH1-HB-kp8"/>
+                        <outlet property="descriptionLabel" destination="MEa-A3-y6t" id="kPE-Xr-8uS"/>
+                        <outlet property="imageView" destination="Rnk-8K-96n" id="9GR-lt-vOP"/>
+                        <outlet property="nameLabel" destination="A0M-ah-UIL" id="l5M-P5-38m"/>
+                        <outlet property="priceLabel" destination="Zyt-n8-2HV" id="IW2-7X-NU2"/>
+                        <outlet property="sellerLabel" destination="8Cd-Dk-iCv" id="vR8-bW-Cff"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eD1-2I-Z3e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6276.9230769230771" y="-1445.260663507109"/>
         </scene>
         <!--Browse-->
         <scene sceneID="fWD-oo-pXn">
