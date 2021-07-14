@@ -71,5 +71,9 @@
 		<string>googlechromes</string>
 		<string>comgooglemaps</string>
 	</array>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Need location access for map</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Need location access for map</string>
 </dict>
 </plist>
