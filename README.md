@@ -57,7 +57,7 @@ Yesterday's features:
     - [x] double tap on address to show map 
     - [x] use geocode api to get latitude and longitute from address string
     - [x] put item address marker google maps sdk
-    - [ ] show current location marker on map
+    - [x] show current location on map
     - [ ] use Directions API to show directions from current location to address 
 - [ ] search avaiable items by keyword
 - [ ] search users

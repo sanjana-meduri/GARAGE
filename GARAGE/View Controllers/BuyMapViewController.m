@@ -8,10 +8,11 @@
 #import "BuyMapViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
 
-@interface BuyMapViewController ()
+@interface BuyMapViewController () <CLLocationManagerDelegate>
 
 @property (strong, nonatomic) GMSMapView *mapView;
 @property (strong, nonatomic) NSDictionary *destinationCoordinates;
+@property (assign, nonatomic) BOOL firstLocationUpdate;
 
 @end
 
@@ -26,6 +27,14 @@
     self.mapView.settings.myLocationButton = YES;
     self.mapView.myLocationEnabled = YES;
     
+    self.locationManager = [[CLLocationManager alloc] init];
+    
+    self.locationManager.delegate = self;
+    
+    self.locationManager.distanceFilter = kCLDistanceFilterNone;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+    [self.locationManager startUpdatingLocation];
+
     [self geocodeRequest];
 }
 
@@ -43,9 +52,24 @@
     self.mapView = [GMSMapView mapWithFrame:mapFrame camera:camera];
     [self.view addSubview:self.mapView];
     
-    GMSMarker *marker = [GMSMarker markerWithPosition:CLLocationCoordinate2DMake(latitude, longitude)];
-    marker.title = @"Item Address";
-    marker.map = self.mapView;
+    GMSMarker *itemMarker = [GMSMarker markerWithPosition:CLLocationCoordinate2DMake(latitude, longitude)];
+    itemMarker.title = @"Item Address";
+    itemMarker.map = self.mapView;
+    
+//    double deviceLatitude = self.locationManager.location.coordinate.latitude;
+//    double deviceLongitude = self.locationManager.location.coordinate.longitude;
+//    GMSMarker *deviceMarker = [GMSMarker markerWithPosition:CLLocationCoordinate2DMake(deviceLatitude, deviceLongitude)];
+//    deviceMarker.title = @"My Location";
+//    deviceMarker.map = self.mapView;
+    
+    [self.mapView addObserver:self
+                 forKeyPath:@"myLocation"
+                    options:NSKeyValueObservingOptionNew
+                    context:NULL];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+      self.mapView.myLocationEnabled = YES;
+    });
 }
 
 - (void) geocodeRequest{
@@ -88,6 +112,24 @@
            }];
         [task resume];
 
+}
+
+
+- (void)dealloc {
+  [self.mapView removeObserver:self
+                forKeyPath:@"myLocation"
+                   context:NULL];
+}
+
+#pragma mark - KVO updates
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context {
+  if (!self.firstLocationUpdate) {
+    self.firstLocationUpdate = YES;
+  }
 }
 
 /*
