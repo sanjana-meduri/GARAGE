@@ -28,16 +28,24 @@ TODO: keyboard covers some text fields in the add item page
 
 Today:
 
-<img src="./readme_assets/gifs/day3.gif" width=200 height=500>
+<img src="./readme_assets/gifs/day4.gif" width=200 height=500>
 
 Challenges Solved Today:
 
-- fixed issue with asynchronous pushing of the updated item to the database finishing faster than the for loop gets to the next item when you click on start sale
-- url request to geocode api faililng, had to reformat url string and change security protocal for ATS
-- location manager to get current device location was not working -- had to research asynchronous dispatch on the maps docs
-- parse backend completely stopped working (i think it was because the current session i was using somehow got deleted) had to restart the session and rebuild
+- Parse user email field is hidden from other users, had to create a workaround and save the seller's email as a field of the listing itself
+- Buy button was crashing the app, turns out i had connected it to two different conflicting actions so i had to refactor code to perform a manual segue
+
+Unsolved Challenges from Today:
+
+- creating a popup when you click the buy button
+    - worked for a couple hours on this using different classes, but it didn't end up working, will probably try it again as an optional feature
+- expandable table view cell
+    - tried to find an external library that did this, but didn't find one -- i will probably manually implement it as an optional feature
+
 
 Previous Features:
+
+<img src="./readme_assets/gifs/day3.gif" width=200 height=500>
 
 <img src="./readme_assets/gifs/day2.gif" width=200 height=500>
 
@@ -69,7 +77,7 @@ Previous Features:
     - [x] put item address marker google maps sdk
     - [x] show current location on map
     - [ ] use Directions API to show directions from current location to address 
-- [ ] buy button on detail page that gives the seller's email address
+- [x] buy button on detail page that gives the seller's email address
 - [ ] search avaiable items by keyword
 - [ ] search users
 - [ ] tap on seller name to view seller page
