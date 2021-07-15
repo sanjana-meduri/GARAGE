@@ -75,8 +75,6 @@ Previous Features:
 - [ ] tap on seller name to view seller page
 - [ ] filter browse results by tag
 
-
-
 **Optional Nice-to-have Stories**
 
 - [ ] details page in MyGarage tab with option to delete item and start sale on individual item

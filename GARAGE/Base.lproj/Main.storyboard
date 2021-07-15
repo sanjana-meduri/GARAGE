@@ -44,18 +44,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjP-Qr-Ffx">
-                                <rect key="frame" x="168" y="483" width="54" height="36"/>
+                                <rect key="frame" x="168" y="530" width="54" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Myl-5d-uLb"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address (for first time users)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8te-zT-LNp">
+                                <rect key="frame" x="65" y="494" width="260" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="email"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="emailField" destination="8te-zT-LNp" id="ivv-iC-Sz2"/>
                         <outlet property="passwordField" destination="Wl9-mK-pMI" id="AxL-4d-kyz"/>
                         <outlet property="usernameField" destination="YsM-0c-AKf" id="6Rg-s4-fWf"/>
                         <segue destination="8cG-sp-m4L" kind="presentation" identifier="loginSegue" modalPresentationStyle="fullScreen" id="zlB-xf-SgS"/>
@@ -63,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.92307692307691" y="112.32227488151658"/>
+            <point key="canvasLocation" x="135.38461538461539" y="112.32227488151658"/>
         </scene>
         <!--My Garage-->
         <scene sceneID="ZPB-tl-UPT">

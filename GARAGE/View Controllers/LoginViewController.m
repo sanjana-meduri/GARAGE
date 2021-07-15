@@ -11,6 +11,7 @@
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
 
 @end
 
@@ -22,7 +23,7 @@
 }
 
 - (IBAction)onLogin:(id)sender {
-    [self checkEmptyFields];
+    [self checkEmptyFields:NO];
     
     NSString *username = self.usernameField.text;
     NSString *password = self.passwordField.text;
@@ -39,12 +40,13 @@
 }
 
 - (IBAction)onSignUp:(id)sender {
-    [self checkEmptyFields];
+    [self checkEmptyFields:YES];
     
     PFUser *newUser = [PFUser user];
     
     newUser.username = self.usernameField.text;
     newUser.password = self.passwordField.text;
+    newUser.email = self.emailField.text;
     
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error != nil) {
@@ -57,9 +59,11 @@
     }];
 }
 
--(void) checkEmptyFields{
-    if ([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""])
+-(void) checkEmptyFields:(BOOL)newUser{
+    if (!newUser && ([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""]))
         [self failedAttempt:@"Username/password is empty"];
+    if (newUser && ([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""] || [self.emailField.text isEqual:@""]))
+        [self failedAttempt:@"You must fill out all the fields when signing up"];
 }
 
 - (void) failedAttempt:(NSString*) errorMessage{
