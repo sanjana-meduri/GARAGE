@@ -26,6 +26,7 @@
 		E43FD30B269F414E004BCBA4 /* BuyDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD30A269F414E004BCBA4 /* BuyDetailsViewController.m */; };
 		E43FD30E269F49BC004BCBA4 /* BuyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD30D269F49BC004BCBA4 /* BuyMapViewController.m */; };
 		E43FD31126A088AD004BCBA4 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD31026A088AD004BCBA4 /* SignUpViewController.m */; };
+		E43FD31D26A0B58A004BCBA4 /* PurchasedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD31C26A0B58A004BCBA4 /* PurchasedViewController.m */; };
 		E4FE2C8C269C97DE001E0457 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C8B269C97DE001E0457 /* LoginViewController.m */; };
 		E4FE2C94269CA28E001E0457 /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C93269CA28E001E0457 /* Listing.m */; };
 		E4FE2C97269CA6F4001E0457 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C96269CA6F4001E0457 /* AddItemViewController.m */; };
@@ -97,6 +98,8 @@
 		E43FD30D269F49BC004BCBA4 /* BuyMapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuyMapViewController.m; sourceTree = "<group>"; };
 		E43FD30F26A088AD004BCBA4 /* SignUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		E43FD31026A088AD004BCBA4 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		E43FD31B26A0B58A004BCBA4 /* PurchasedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchasedViewController.h; sourceTree = "<group>"; };
+		E43FD31C26A0B58A004BCBA4 /* PurchasedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchasedViewController.m; sourceTree = "<group>"; };
 		E4FE2C8A269C97DE001E0457 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E4FE2C8B269C97DE001E0457 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E4FE2C92269CA28E001E0457 /* Listing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Listing.h; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 				E43FD30D269F49BC004BCBA4 /* BuyMapViewController.m */,
 				E43FD30F26A088AD004BCBA4 /* SignUpViewController.h */,
 				E43FD31026A088AD004BCBA4 /* SignUpViewController.m */,
+				E43FD31B26A0B58A004BCBA4 /* PurchasedViewController.h */,
+				E43FD31C26A0B58A004BCBA4 /* PurchasedViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -555,6 +560,7 @@
 				E43FD305269F3B64004BCBA4 /* BuyViewController.m in Sources */,
 				E40BBDA9269C929F0039166B /* main.m in Sources */,
 				E43FD30E269F49BC004BCBA4 /* BuyMapViewController.m in Sources */,
+				E43FD31D26A0B58A004BCBA4 /* PurchasedViewController.m in Sources */,
 				E40BBD9B269C929F0039166B /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

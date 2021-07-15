@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *condition;
 @property (nonatomic, strong) PFFileObject *image;
 @property (nonatomic, strong) NSString *address;
+@property (nonatomic, strong) NSString *itemEmail;
 @property (nonatomic, strong) NSNumber *price;
 
 + (void) postListing: ( UIImage * _Nullable )image withDescription: ( NSString * _Nullable )description withName: ( NSString * _Nullable )name withCondition:( NSString * _Nullable )condition withTag:( NSString * _Nullable )tag withAddress:( NSString * _Nullable )address withPrice:( NSNumber * _Nullable )price withCompletion: (PFBooleanResultBlock  _Nullable)completion;

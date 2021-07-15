@@ -776,6 +776,15 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6E8-Zf-iGK">
+                                        <rect key="frame" x="197" y="526" width="39" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="Buy"/>
+                                        <connections>
+                                            <segue destination="rOE-Cp-eMs" kind="presentation" identifier="buySegue" id="qK7-jg-c5S"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="2bd-gZ-QVY" firstAttribute="top" secondItem="MEa-A3-y6t" secondAttribute="bottom" constant="12" id="0oL-fI-IMl"/>
@@ -825,6 +834,38 @@
             </objects>
             <point key="canvasLocation" x="6276.9230769230771" y="-1445.260663507109"/>
         </scene>
+        <!--Purchased View Controller-->
+        <scene sceneID="SVX-4z-hxS">
+            <objects>
+                <viewController storyboardIdentifier="popup" id="rOE-Cp-eMs" customClass="PurchasedViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NGb-KI-oDy">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3R6-Oq-sx1">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="756"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QE9-OQ-icB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QE9-OQ-icB" firstAttribute="bottom" secondItem="3R6-Oq-sx1" secondAttribute="bottom" id="E1N-ha-hdU"/>
+                            <constraint firstItem="3R6-Oq-sx1" firstAttribute="top" secondItem="QE9-OQ-icB" secondAttribute="top" id="NY5-Lg-2D7"/>
+                            <constraint firstItem="3R6-Oq-sx1" firstAttribute="leading" secondItem="QE9-OQ-icB" secondAttribute="leading" id="SxD-kh-bls"/>
+                            <constraint firstItem="QE9-OQ-icB" firstAttribute="trailing" secondItem="3R6-Oq-sx1" secondAttribute="trailing" id="oFg-aW-vre"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="3R6-Oq-sx1" id="3pd-Qh-CfD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QO2-bO-HOf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7115.3846153846152" y="-1207.1090047393363"/>
+        </scene>
         <!--Map-->
         <scene sceneID="n32-Hq-pwj">
             <objects>
@@ -852,7 +893,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nE5-RV-HDA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7157" y="-1445"/>
+            <point key="canvasLocation" x="7115" y="-1913"/>
         </scene>
         <!--Browse-->
         <scene sceneID="fWD-oo-pXn">

@@ -19,6 +19,7 @@
 @dynamic address;
 @dynamic tag;
 @dynamic condition;
+@dynamic itemEmail;
 @dynamic inInventory;
 @dynamic alreadySold;
 
@@ -39,6 +40,7 @@
     newListing.condition = condition;
     newListing.inInventory = true;
     newListing.alreadySold = false;
+    newListing.itemEmail = newListing.seller.email;
     
     [newListing saveInBackgroundWithBlock: completion];
     

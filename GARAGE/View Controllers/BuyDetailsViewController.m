@@ -11,6 +11,7 @@
 #import "Listing.h"
 #import "NSDate+DateTools.h"
 #import "BuyMapViewController.h"
+#import "PurchasedViewController.h"
 
 @interface BuyDetailsViewController ()
 @property (weak, nonatomic) IBOutlet PFImageView *imageView;
@@ -61,7 +62,6 @@
 
 }
 
-
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -69,6 +69,11 @@
     if ([segue.identifier isEqual:@"mapSegue"]){
         BuyMapViewController *mapViewController = [segue destinationViewController];
         mapViewController.listing = self.listing;
+    }
+    
+    if ([segue.identifier isEqual:@"buySegue"]){
+        PurchasedViewController *purchasedViewController = [segue destinationViewController];
+        purchasedViewController.listing = self.listing;
     }
 }
 

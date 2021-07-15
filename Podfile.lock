@@ -29,6 +29,7 @@ PODS:
     - Bolts/Tasks (= 1.9.1)
   - Parse/UI (1.19.2):
     - Parse/Core
+  - STPopup (1.8.7)
 
 DEPENDENCIES:
   - AFNetworking
@@ -38,6 +39,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - Parse
   - Parse/UI
+  - STPopup
 
 SPEC REPOS:
   trunk:
@@ -48,6 +50,7 @@ SPEC REPOS:
     - GooglePlaces
     - IQKeyboardManager
     - Parse
+    - STPopup
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
@@ -57,7 +60,8 @@ SPEC CHECKSUMS:
   GooglePlaces: 5d87ca13ed98b7a937e0d8bc7026f718c7263271
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Parse: 081fb8755c3000fd11df817eec235def233d0af3
+  STPopup: a9045557bc48a0df51fbb7bf0544447c5fe84d34
 
-PODFILE CHECKSUM: f68072ec986135a88e93bddcd1bac1f27be07040
+PODFILE CHECKSUM: 8a715bb30d7f4dbec9da4af19e0882be2bc82172
 
 COCOAPODS: 1.10.1
