@@ -1,48 +1,51 @@
 //
-//  LoginViewController.m
+//  SignUpViewController.m
 //  GARAGE
 //
-//  Created by Sanjana Meduri on 7/12/21.
+//  Created by Sanjana Meduri on 7/15/21.
 //
 
-#import "LoginViewController.h"
+#import "SignUpViewController.h"
 #import "Parse/Parse.h"
 
-@interface LoginViewController ()
-@property (weak, nonatomic) IBOutlet UITextField *usernameField;
-@property (weak, nonatomic) IBOutlet UITextField *passwordField;
-@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@interface SignUpViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *usernameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *passwordLabel;
+@property (weak, nonatomic) IBOutlet UITextField *emailLabel;
 
 @end
 
-@implementation LoginViewController
+@implementation SignUpViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
-- (IBAction)onLogin:(id)sender {
-    [self checkEmptyFields:NO];
+- (IBAction)onSignUp:(id)sender {
+    [self checkEmptyFields:YES];
     
-    NSString *username = self.usernameField.text;
-    NSString *password = self.passwordField.text;
+    PFUser *newUser = [PFUser user];
     
-    [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
+    newUser.username = self.usernameLabel.text;
+    newUser.password = self.passwordLabel.text;
+    newUser.email = self.emailLabel.text;
+    
+    [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
         if (error != nil) {
-            NSLog(@"User log in failed: %@", error.localizedDescription);
-            [self failedAttempt:[NSString stringWithFormat:(@"Login Failed: %@", error.localizedDescription)]];
+            NSLog(@"Error: %@", error.localizedDescription);
+            [self failedAttempt:[NSString stringWithFormat:(@"Error: %@", error.localizedDescription)]];
         } else {
-            NSLog(@"User logged in successfully");
-            [self performSegueWithIdentifier:@"loginSegue" sender:nil];
+            NSLog(@"User registered successfully");
+            [self performSegueWithIdentifier:@"signUpSegue" sender:nil];
         }
     }];
 }
 
 -(void) checkEmptyFields:(BOOL)newUser{
-    if (!newUser && ([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""]))
+    if (!newUser && ([self.usernameLabel.text isEqual:@""] || [self.passwordLabel.text isEqual:@""]))
         [self failedAttempt:@"Username/password is empty"];
-    if (newUser && ([self.usernameField.text isEqual:@""] || [self.passwordField.text isEqual:@""] || [self.emailField.text isEqual:@""]))
+    if (newUser && ([self.usernameLabel.text isEqual:@""] || [self.passwordLabel.text isEqual:@""] || [self.emailLabel.text isEqual:@""]))
         [self failedAttempt:@"You must fill out all the fields when signing up"];
 }
 
@@ -57,6 +60,7 @@
     
     [self presentViewController:alert animated:YES completion:^{}];
 }
+
 - (IBAction)onBack:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }
