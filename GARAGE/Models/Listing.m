@@ -41,6 +41,7 @@
     newListing.inInventory = true;
     newListing.alreadySold = false;
     newListing.itemEmail = newListing.seller.email;
+    newListing.sellerName = newListing.seller.username;
     
     [newListing saveInBackgroundWithBlock: completion];
     
