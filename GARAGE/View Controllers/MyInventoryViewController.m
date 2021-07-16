@@ -9,6 +9,7 @@
 #import "InventoryCell.h"
 #import "Listing.h"
 #import "Parse/Parse.h"
+#import "utils.h"
 
 @interface MyInventoryViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -47,19 +48,7 @@
 }
 
 - (void) queryListings{
-    PFQuery *query = [PFQuery queryWithClassName:@"Listing"];
-    [query orderByDescending:@"createdAt"];
-    [query includeKey:@"seller"];
-    [query includeKey:@"description"];
-    [query includeKey:@"alreadySold"];
-    [query includeKey:@"inInventory"];
-    [query includeKey:@"createdAt"];
-    [query includeKey:@"tag"];
-    [query includeKey:@"name"];
-    [query includeKey:@"condition"];
-    [query includeKey:@"image"];
-    [query includeKey:@"address"];
-    [query includeKey:@"price"];
+    PFQuery *query = [utils setUpQuery];
     
     [query whereKey:@"seller" equalTo:self.user];
     
@@ -68,9 +57,6 @@
     
     [query whereKey:@"alreadySold" equalTo:alreadySoldTag];
     [query whereKey:@"inInventory" equalTo:inInventoryTag];
-    
-    int numListings = 20;
-    query.limit = numListings;
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *listings, NSError *error) {
         if (listings != nil) {

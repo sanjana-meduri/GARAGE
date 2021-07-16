@@ -27,6 +27,9 @@
 		E43FD30E269F49BC004BCBA4 /* BuyMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD30D269F49BC004BCBA4 /* BuyMapViewController.m */; };
 		E43FD31126A088AD004BCBA4 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD31026A088AD004BCBA4 /* SignUpViewController.m */; };
 		E43FD31D26A0B58A004BCBA4 /* PurchasedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD31C26A0B58A004BCBA4 /* PurchasedViewController.m */; };
+		E45C6D4126A1DBA8004F900A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E45C6D4026A1DBA8004F900A /* SearchViewController.m */; };
+		E45C6D4526A1E3EB004F900A /* utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E45C6D4426A1E3EB004F900A /* utils.m */; };
+		E45C6D5026A1EF10004F900A /* SearchBuyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E45C6D4F26A1EF10004F900A /* SearchBuyCell.m */; };
 		E4FE2C8C269C97DE001E0457 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C8B269C97DE001E0457 /* LoginViewController.m */; };
 		E4FE2C94269CA28E001E0457 /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C93269CA28E001E0457 /* Listing.m */; };
 		E4FE2C97269CA6F4001E0457 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C96269CA6F4001E0457 /* AddItemViewController.m */; };
@@ -100,6 +103,12 @@
 		E43FD31026A088AD004BCBA4 /* SignUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		E43FD31B26A0B58A004BCBA4 /* PurchasedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PurchasedViewController.h; sourceTree = "<group>"; };
 		E43FD31C26A0B58A004BCBA4 /* PurchasedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PurchasedViewController.m; sourceTree = "<group>"; };
+		E45C6D3F26A1DBA8004F900A /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		E45C6D4026A1DBA8004F900A /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		E45C6D4326A1E3EB004F900A /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
+		E45C6D4426A1E3EB004F900A /* utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = utils.m; sourceTree = "<group>"; };
+		E45C6D4E26A1EF10004F900A /* SearchBuyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBuyCell.h; sourceTree = "<group>"; };
+		E45C6D4F26A1EF10004F900A /* SearchBuyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBuyCell.m; sourceTree = "<group>"; };
 		E4FE2C8A269C97DE001E0457 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E4FE2C8B269C97DE001E0457 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E4FE2C92269CA28E001E0457 /* Listing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Listing.h; sourceTree = "<group>"; };
@@ -186,6 +195,7 @@
 		E40BBD95269C929F0039166B /* GARAGE */ = {
 			isa = PBXGroup;
 			children = (
+				E45C6D4226A1E3DA004F900A /* Utils */,
 				E4FE2C91269CA248001E0457 /* Views */,
 				E4FE2C90269CA241001E0457 /* Models */,
 				E4FE2C89269C97C5001E0457 /* View Controllers */,
@@ -220,6 +230,15 @@
 			path = GARAGEUITests;
 			sourceTree = "<group>";
 		};
+		E45C6D4226A1E3DA004F900A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E45C6D4326A1E3EB004F900A /* utils.h */,
+				E45C6D4426A1E3EB004F900A /* utils.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		E4FE2C89269C97C5001E0457 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -245,6 +264,8 @@
 				E43FD31026A088AD004BCBA4 /* SignUpViewController.m */,
 				E43FD31B26A0B58A004BCBA4 /* PurchasedViewController.h */,
 				E43FD31C26A0B58A004BCBA4 /* PurchasedViewController.m */,
+				E45C6D3F26A1DBA8004F900A /* SearchViewController.h */,
+				E45C6D4026A1DBA8004F900A /* SearchViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -267,6 +288,8 @@
 				E43FD2F8269E32B3004BCBA4 /* ForSaleCell.m */,
 				E43FD306269F3B7D004BCBA4 /* BuyCell.h */,
 				E43FD307269F3B7D004BCBA4 /* BuyCell.m */,
+				E45C6D4E26A1EF10004F900A /* SearchBuyCell.h */,
+				E45C6D4F26A1EF10004F900A /* SearchBuyCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -547,9 +570,11 @@
 				E43FD2F9269E32B3004BCBA4 /* ForSaleCell.m in Sources */,
 				E4FE2C8C269C97DE001E0457 /* LoginViewController.m in Sources */,
 				E43FD2FC269E32C9004BCBA4 /* ForSaleViewController.m in Sources */,
+				E45C6D5026A1EF10004F900A /* SearchBuyCell.m in Sources */,
 				E43FD2F3269DEB31004BCBA4 /* MyInventoryViewController.m in Sources */,
 				E43FD31126A088AD004BCBA4 /* SignUpViewController.m in Sources */,
 				E43FD302269F3A46004BCBA4 /* BrowseViewController.m in Sources */,
+				E45C6D4126A1DBA8004F900A /* SearchViewController.m in Sources */,
 				E43FD30B269F414E004BCBA4 /* BuyDetailsViewController.m in Sources */,
 				E4FE2C97269CA6F4001E0457 /* AddItemViewController.m in Sources */,
 				E43FD308269F3B7D004BCBA4 /* BuyCell.m in Sources */,
@@ -558,6 +583,7 @@
 				E4FE2C9A269CAE46001E0457 /* MyGarageViewController.m in Sources */,
 				E40BBD98269C929F0039166B /* AppDelegate.m in Sources */,
 				E43FD305269F3B64004BCBA4 /* BuyViewController.m in Sources */,
+				E45C6D4526A1E3EB004F900A /* utils.m in Sources */,
 				E40BBDA9269C929F0039166B /* main.m in Sources */,
 				E43FD30E269F49BC004BCBA4 /* BuyMapViewController.m in Sources */,
 				E43FD31D26A0B58A004BCBA4 /* PurchasedViewController.m in Sources */,
