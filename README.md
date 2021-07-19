@@ -76,15 +76,16 @@ Previous Features:
     - [x] use geocode api to get latitude and longitute from address string
     - [x] put item address marker google maps sdk
     - [x] show current location on map
-    - [ ] use Directions API to show directions from current location to address 
 - [x] buy button on detail page that gives the seller's email address
-- [ ] search avaiable items by keyword
-- [ ] search users
-- [ ] tap on seller name to view seller page
-- [ ] filter browse results by tag
+- [x] search available items by keyword
+- [x] search users
+- [x] filter browse results by tag
 
 **Optional Nice-to-have Stories**
 
+- [ ] expandable cell to show details of item
+- [ ] show results within certain distance radius of user
+- [ ] settings page
 - [ ] details page in MyGarage tab with option to delete item and start sale on individual item
 - [ ] rent option
 - [ ] message a seller
@@ -97,7 +98,8 @@ Previous Features:
 - [ ] change default radius for browsing in settings
 - [ ] keep track of what user has sold and amount
 - [ ] add notification to seller
-
+- [ ] tap on seller name to view seller page
+- [ ] use Directions API to show directions from current location to address 
 
 ### 2. Screen Archetypes
 
