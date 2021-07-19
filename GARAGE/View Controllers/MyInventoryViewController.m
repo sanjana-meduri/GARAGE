@@ -16,7 +16,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *itemValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *itemTallyLabel;
 @property (strong, nonatomic) IBOutlet UIView *view;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) NSArray *listings;
 @property (strong, nonatomic) PFUser *user;
 @property (assign, nonatomic) NSTimeInterval lastClick;
@@ -32,6 +31,9 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    self.tableView.backgroundColor = [UIColor systemYellowColor];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     self.user = PFUser.currentUser;
     
@@ -82,10 +84,11 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     InventoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InventoryCell"];
     
-    Listing *listing = self.listings[indexPath.row];
+    Listing *listing = self.listings[indexPath.section];
     
     cell.imageView.file = listing.image;
     [cell.imageView loadInBackground];
+    cell.imageView.layer.cornerRadius = 15;
     
     cell.nameLabel.text = listing.name;
     cell.priceLabel.text = [@"$" stringByAppendingString:[listing.price stringValue]];
@@ -95,7 +98,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.listings.count;
+    return 1;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -120,6 +123,26 @@
                         NSLog(@"Problem starting sale: %@", error.localizedDescription);
                     }}];
     }
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.layer.cornerRadius = 15;
+    cell.layer.masksToBounds = YES;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.listings.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 12.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *headerView = [UIView new];
+    [headerView setBackgroundColor:[UIColor clearColor]];
+    return headerView;
 }
 
 /*

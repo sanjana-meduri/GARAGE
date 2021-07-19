@@ -28,12 +28,15 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    self.tableView.backgroundColor = [UIColor systemBlueColor];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
     self.user = PFUser.currentUser;
     
     [self queryListings];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl setTintColor:[UIColor blueColor]];
+    [self.refreshControl setTintColor:[UIColor whiteColor]];
     [self.refreshControl addTarget:self action:@selector(queryListings) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:self.refreshControl atIndex:0];
 }
@@ -65,16 +68,18 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.listings.count;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BuyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BuyCell"];
     
-    Listing *listing = self.listings[indexPath.row];
+    Listing *listing = self.listings[indexPath.section];
     
     cell.imageView.file = listing.image;
     [cell.imageView loadInBackground];
+    cell.imageView.layer.cornerRadius = 15;
+    cell.imageView.layer.masksToBounds = YES;
     
     cell.nameLabel.text = listing.name;
     cell.priceLabel.text = [@"$" stringByAppendingString:[listing.price stringValue]];
@@ -92,6 +97,26 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.layer.cornerRadius = 15;
+    cell.layer.masksToBounds = YES;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.listings.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 12.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *headerView = [UIView new];
+    [headerView setBackgroundColor:[UIColor clearColor]];
+    return headerView;
+}
+
 
 #pragma mark - Navigation
 
@@ -103,7 +128,7 @@
         UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
         
-        Listing *tappedListing = self.listings[indexPath.row];
+        Listing *tappedListing = self.listings[indexPath.section];
         detailsViewController.listing = tappedListing;
     }
 }
