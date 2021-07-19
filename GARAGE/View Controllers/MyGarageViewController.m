@@ -12,6 +12,7 @@
 
 
 @interface MyGarageViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *userLabel;
 
 @end
 
@@ -19,7 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    PFUser *user = PFUser.currentUser;
+    self.userLabel.text = user.username;
 }
 
 - (IBAction)onLogout:(id)sender {
