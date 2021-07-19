@@ -24,16 +24,19 @@ GARAGE is an app that allows a user to decrease clutter in their house by puttin
 
 ## Current Progress
 
-TODO: keyboard covers some text fields in the add item page
+TODO: keyboard covers some text fields in the add item page (use visual polish library)
 
 Today:
 
-<img src="./readme_assets/gifs/day4.gif" width=200 height=500>
+<img src="./readme_assets/gifs/day6.gif" width=200 height=500>
+<img src="./readme_assets/rounded_table_view/1.png" width=200 height=500>
+<img src="./readme_assets/rounded_table_view/2.png" width=200 height=500>
+<img src="./readme_assets/rounded_table_view/3.png" width=200 height=500>
+<img src="./readme_assets/rounded_table_view/4.png" width=200 height=500>
 
 Challenges Solved Today:
 
-- Parse user email field is hidden from other users, had to create a workaround and save the seller's email as a field of the listing itself
-- Buy button was crashing the app, turns out i had connected it to two different conflicting actions so i had to refactor code to perform a manual segue
+- 
 
 Unsolved Challenges from Today:
 
@@ -44,6 +47,8 @@ Unsolved Challenges from Today:
 
 
 Previous Features:
+
+<img src="./readme_assets/gifs/day4.gif" width=200 height=500>
 
 <img src="./readme_assets/gifs/day3.gif" width=200 height=500>
 
@@ -102,6 +107,7 @@ Previous Features:
 - [ ] add notification to seller
 - [ ] tap on seller name to view seller page
 - [ ] use Directions API to show directions from current location to address 
+- [ ] recommended content
 
 ### 2. Screen Archetypes
 
