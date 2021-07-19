@@ -93,11 +93,6 @@
     
     cell.dateLabel.text = stringFromDate;
     
-    CGRect cellFrame = cell.frame;
-    cellFrame.size.width = 0.8 * self.tableView.frame.size.width;
-    
-    cell.frame = cellFrame;
-    
     return cell;
 }
 
