@@ -34,6 +34,8 @@
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    self.tableView.backgroundColor = [UIColor systemOrangeColor];
         
     self.searchField.text = @"";
     self.tagField.text = @"";
@@ -131,16 +133,17 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.listings.count;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SearchBuyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchBuyCell"];
     
-    Listing *listing = self.listings[indexPath.row];
+    Listing *listing = self.listings[indexPath.section];
     
     cell.imageView.file = listing.image;
     [cell.imageView loadInBackground];
+    cell.imageView.layer.cornerRadius = 15;
     
     cell.nameLabel.text = listing.name;
     cell.priceLabel.text = [@"$" stringByAppendingString:[listing.price stringValue]];
@@ -156,6 +159,26 @@
     cell.dateLabel.text = stringFromDate;
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    cell.layer.cornerRadius = 15;
+    cell.layer.masksToBounds = YES;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.listings.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 12.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *headerView = [UIView new];
+    [headerView setBackgroundColor:[UIColor clearColor]];
+    return headerView;
 }
 
 - (IBAction)onClear:(id)sender {

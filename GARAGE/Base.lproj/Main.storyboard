@@ -901,16 +901,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WFy-1S-az0">
-                                <rect key="frame" x="0.0" y="252" width="390" height="592"/>
+                                <rect key="frame" x="8" y="252" width="374" height="592"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <color key="tintColor" red="0.79230288500000001" green="0.90469134360000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="sectionIndexBackgroundColor" systemColor="systemYellowColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchBuyCell" rowHeight="155" id="yon-ZC-oFr" customClass="SearchBuyCell">
-                                        <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="155"/>
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="374" height="155"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yon-ZC-oFr" id="Kxv-ya-WO8">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="155"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="155"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Jjn-m9-tJ0" customClass="PFImageView">
@@ -933,7 +933,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0mT-kt-QMB">
-                                                    <rect key="frame" x="328" y="123" width="42" height="21"/>
+                                                    <rect key="frame" x="312" y="123" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1028,16 +1028,16 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Zwx-ke-22Z"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
-                            <constraint firstItem="WFy-1S-az0" firstAttribute="leading" secondItem="Zwx-ke-22Z" secondAttribute="leading" id="41n-sI-vDY"/>
+                            <constraint firstItem="WFy-1S-az0" firstAttribute="leading" secondItem="Zwx-ke-22Z" secondAttribute="leading" constant="8" id="41n-sI-vDY"/>
                             <constraint firstItem="MJ8-Ak-rrj" firstAttribute="top" secondItem="ENQ-9J-gjY" secondAttribute="bottom" constant="10" id="6Q0-fe-q1Z"/>
                             <constraint firstItem="MJ8-Ak-rrj" firstAttribute="leading" secondItem="Zwx-ke-22Z" secondAttribute="leading" constant="16" id="Fkx-H0-6h6"/>
                             <constraint firstItem="ENQ-9J-gjY" firstAttribute="leading" secondItem="VE9-au-vQz" secondAttribute="trailing" constant="25" id="JEb-2M-f8T"/>
+                            <constraint firstItem="Zwx-ke-22Z" firstAttribute="trailing" secondItem="WFy-1S-az0" secondAttribute="trailing" constant="8" id="MzP-RB-njQ"/>
                             <constraint firstItem="ENQ-9J-gjY" firstAttribute="top" secondItem="Zwx-ke-22Z" secondAttribute="top" constant="8" id="QO6-ed-cyf"/>
                             <constraint firstItem="Nv8-gp-hDS" firstAttribute="leading" secondItem="Zwx-ke-22Z" secondAttribute="leading" constant="15" id="XcA-Uf-zNh"/>
                             <constraint firstItem="VE9-au-vQz" firstAttribute="top" secondItem="Zwx-ke-22Z" secondAttribute="top" constant="6" id="YDp-fL-TZV"/>
-                            <constraint firstItem="WFy-1S-az0" firstAttribute="trailing" secondItem="Zwx-ke-22Z" secondAttribute="trailing" id="Zzg-G5-WKx"/>
                             <constraint firstItem="Tcj-xc-FJL" firstAttribute="top" secondItem="vaP-0J-qEb" secondAttribute="bottom" constant="27" id="b3r-T0-47D"/>
                             <constraint firstItem="WFy-1S-az0" firstAttribute="top" secondItem="Nv8-gp-hDS" secondAttribute="bottom" constant="46" id="bnD-Nt-tYM"/>
                             <constraint firstItem="5VO-fK-H6r" firstAttribute="leading" secondItem="Zwx-ke-22Z" secondAttribute="leading" constant="177" id="cfd-Ot-Ecj"/>
@@ -1194,6 +1194,9 @@
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
