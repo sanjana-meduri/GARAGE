@@ -71,11 +71,13 @@ Previous Features:
 - [x] refresh controls in current inventory
 - [x] refresh controls in current items for sale
 - [x] browse all available items to buy
-- [x] listing detail page 
+- [x] popup listing detail page 
     - [x] double tap on address to show map 
     - [x] use geocode api to get latitude and longitute from address string
     - [x] put item address marker google maps sdk
     - [x] show current location on map
+    - [x] blur background when popup opens
+    - [x] animate popup and blur
 - [x] buy button on detail page that gives the seller's email address
 - [x] search available items by keyword
 - [x] search users
