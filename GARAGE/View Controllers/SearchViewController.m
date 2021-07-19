@@ -36,6 +36,7 @@
     self.tableView.delegate = self;
     
     self.tableView.backgroundColor = [UIColor systemOrangeColor];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
         
     self.searchField.text = @"";
     self.tagField.text = @"";

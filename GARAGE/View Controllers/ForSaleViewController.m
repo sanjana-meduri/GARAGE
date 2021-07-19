@@ -29,6 +29,7 @@
     self.tableView.delegate = self;
     
     self.tableView.backgroundColor = [UIColor systemBlueColor];
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     self.user = PFUser.currentUser;
     
