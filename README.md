@@ -24,7 +24,7 @@ GARAGE is an app that allows a user to decrease clutter in their house by puttin
 
 ## Current Progress
 
-TODO: keyboard covers some text fields in the add item page (use visual polish library)
+TODO: popup on search page
 
 Today:
 
