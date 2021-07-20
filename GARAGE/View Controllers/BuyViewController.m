@@ -12,10 +12,11 @@
 #import "BuyDetailsViewController.h"
 #import "utils.h"
 #import "BuyMapViewController.h"
+#import "INTULocationManager/INTULocationManager.h"
 
 @interface BuyViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) NSArray *listings;
+@property (strong, nonatomic) NSMutableArray *listings;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) PFUser *user;
 @property (weak, nonatomic) IBOutlet UIView *popUpView;
@@ -31,6 +32,8 @@
 @property (weak, nonatomic) IBOutlet UIView *buyPopupView;
 @property (weak, nonatomic) IBOutlet UILabel *purchasedMessageLabel;
 @property (strong, nonatomic) Listing *listing;
+@property (assign, nonatomic) double defaultDistance;
+@property (assign, nonatomic) CLLocationCoordinate2D currentLocation;
 
 @end
 
@@ -38,6 +41,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.defaultDistance = 20;
     
     self.popUpView.alpha = 0;
     self.buyPopupView.alpha = 0;
@@ -56,9 +61,9 @@
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     self.user = PFUser.currentUser;
-    
-    [self queryListings];
-    
+        
+    [self getCurrentLocation];
+
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl setTintColor:[UIColor whiteColor]];
     [self.refreshControl addTarget:self action:@selector(queryListings) forControlEvents:UIControlEventValueChanged];
@@ -81,7 +86,10 @@
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *listings, NSError *error) {
         if (listings != nil) {
-            self.listings = listings;
+            NSMutableArray *betaFilteredListings = [[NSMutableArray alloc] init];
+            NSMutableArray *__strong*filteredListings;
+            [utils filterListings:listings byDistance:self.defaultDistance fromCurrentLocation:self.currentLocation into:&filteredListings];
+            self.listings = *filteredListings;
             [self.tableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
@@ -220,6 +228,23 @@
 - (void) onDoubleTap{
     [self performSegueWithIdentifier:@"mapSegue" sender:nil];
 }
+
+#pragma mark - filtering by distance
+- (void) getCurrentLocation{
+    [utils getCurrentLocationWithCompletion:^(CLLocation * _Nonnull currentLocation, INTULocationAccuracy achievedAccuracy, INTULocationStatus status) {
+        if (status == INTULocationStatusSuccess) {
+            self.currentLocation = currentLocation.coordinate;
+            [self queryListings];
+        }
+        else if (status == INTULocationStatusTimedOut) {
+
+        }
+        else {
+            NSLog(@"Error getting current location: %ld", status);
+        }
+    }];
+}
+
 
 #pragma mark - Navigation
 

@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AF73204A02AE0C30F7289369761D6222"
-               BuildableName = "CCTextFieldEffects.framework"
-               BlueprintName = "CCTextFieldEffects"
+               BlueprintIdentifier = "62BDCEA95B58162F679294C9302CF231"
+               BuildableName = "INTULocationManager.framework"
+               BlueprintName = "INTULocationManager"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

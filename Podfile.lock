@@ -22,6 +22,7 @@ PODS:
   - GoogleMaps/Maps (5.1.0):
     - GoogleMaps/Base
   - GooglePlaces (5.0.0)
+  - INTULocationManager (4.4.0)
   - IQKeyboardManager (6.5.6)
   - Parse (1.19.2):
     - Parse/Core (= 1.19.2)
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - DateTools
   - GoogleMaps (= 5.1.0)
   - GooglePlaces
+  - INTULocationManager
   - IQKeyboardManager
   - Parse
   - Parse/UI
@@ -48,6 +50,7 @@ SPEC REPOS:
     - DateTools
     - GoogleMaps
     - GooglePlaces
+    - INTULocationManager
     - IQKeyboardManager
     - Parse
     - STPopup
@@ -58,10 +61,11 @@ SPEC CHECKSUMS:
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   GoogleMaps: 086ae1dab659eaa7339bdb30fc88e2f44e7c597c
   GooglePlaces: 5d87ca13ed98b7a937e0d8bc7026f718c7263271
+  INTULocationManager: b5a0422782f0b87af0b8db14e0826fb38dbecd19
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Parse: 081fb8755c3000fd11df817eec235def233d0af3
   STPopup: a9045557bc48a0df51fbb7bf0544447c5fe84d34
 
-PODFILE CHECKSUM: 8a715bb30d7f4dbec9da4af19e0882be2bc82172
+PODFILE CHECKSUM: 59a63bc6222e86d09b71a810f6d6024a94e038a8
 
 COCOAPODS: 1.10.1

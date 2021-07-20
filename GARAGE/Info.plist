@@ -72,8 +72,8 @@
 		<string>comgooglemaps</string>
 	</array>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>Need location access for map</string>
+	<string>Need location access for map and distance filtering</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Need location access for map</string>
+	<string>Need location access for map and distance filtering</string>
 </dict>
 </plist>

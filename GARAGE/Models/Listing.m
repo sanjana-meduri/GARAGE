@@ -6,6 +6,7 @@
 //
 
 #import "Listing.h"
+#import "utils.h"
 
 @implementation Listing
 
@@ -22,6 +23,8 @@
 @dynamic itemEmail;
 @dynamic inInventory;
 @dynamic alreadySold;
+@dynamic addressLat;
+@dynamic addressLong;
 
 + (nonnull NSString *)parseClassName {
     return @"Listing";
@@ -43,8 +46,15 @@
     newListing.itemEmail = newListing.seller.email;
     newListing.sellerName = newListing.seller.username;
     
-    [newListing saveInBackgroundWithBlock: completion];
-    
+    [utils geocodeRequest:address WithCompletion:^(NSData * _Nonnull data, NSURLResponse * _Nonnull response, NSError * _Nonnull error) {
+        if(error != nil) NSLog(@"Error getting address coordinates: %@", error.localizedDescription);
+        else{
+            NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+            newListing.addressLat = [dataDictionary[@"results"][0][@"geometry"][@"location"][@"lat"] doubleValue];
+            newListing.addressLong = [dataDictionary[@"results"][0][@"geometry"][@"location"][@"lng"] doubleValue];
+            [newListing saveInBackgroundWithBlock: completion];
+        }
+    }];
 }
 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
@@ -57,8 +67,5 @@
     
     return [PFFileObject fileObjectWithName:@"image.jpeg" data:imageData];
 }
-
-
-
 
 @end

@@ -27,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *itemEmail;
 @property (nonatomic, strong) NSNumber *price;
 @property (nonatomic, strong) NSString *sellerName;
+@property (nonatomic, assign) double addressLat;
+@property (nonatomic, assign) double addressLong;
 
 + (void) postListing: ( UIImage * _Nullable )image withDescription: ( NSString * _Nullable )description withName: ( NSString * _Nullable )name withCondition:( NSString * _Nullable )condition withTag:( NSString * _Nullable )tag withAddress:( NSString * _Nullable )address withPrice:( NSNumber * _Nullable )price withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 
