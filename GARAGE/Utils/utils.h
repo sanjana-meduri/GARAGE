@@ -8,6 +8,7 @@
 #import <Foundation/Foundation.h>
 @import Parse;
 #import "Parse/Parse.h"
+#import <GoogleMaps/GoogleMaps.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) int numListings;
 
 + (PFQuery*) setUpQuery;
++ (void) geocodeRequest: (NSString*)address WithCompletion:(void (^)(NSData *data, NSURLResponse *response, NSError *error))completion;
+
 
 @end
 
