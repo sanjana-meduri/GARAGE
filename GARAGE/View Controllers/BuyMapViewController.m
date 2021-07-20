@@ -7,6 +7,7 @@
 
 #import "BuyMapViewController.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import "utils.h"
 
 @interface BuyMapViewController () <CLLocationManagerDelegate>
 
@@ -59,47 +60,35 @@
 }
 
 - (void) geocodeRequest{
-    NSString *urlString = [[@"https://maps.googleapis.com/maps/api/geocode/json?address=" stringByAppendingString:self.listing.address] stringByAppendingString:@"&key=AIzaSyB3uTAyKC64dPGL_nnZpz0KPcm0PpFXyNc"];
-    
-    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
-    NSURL *requestUrl = [NSURL URLWithString:urlString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:requestUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:10.0];
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
-    
-    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-               if (error != nil) {
-                   NSLog(@"%@", [error localizedDescription]);
+    [utils geocodeRequest:self.listing.address WithCompletion:^(NSData * _Nonnull data, NSURLResponse * _Nonnull response, NSError * _Nonnull error) {
+        if (error != nil) {
+            NSLog(@"%@", [error localizedDescription]);
 
-                   UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Connection Failed" message:@"It looks like you are not connected to the Internet! Please check your connection and try again." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Network Connection Failed" message:@"It looks like you are not connected to the Internet! Please check your connection and try again." preferredStyle:UIAlertControllerStyleAlert];
 
-                   UIAlertAction *retryAction = [UIAlertAction actionWithTitle:@"Retry" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
-                       [self geocodeRequest];
-                   }];
+            UIAlertAction *retryAction = [UIAlertAction actionWithTitle:@"Retry" style:UIAlertActionStyleDefault handler:^(UIAlertAction *_Nonnull action){
+                [self geocodeRequest];
+            }];
 
-                   [alert addAction:retryAction];
+            [alert addAction:retryAction];
 
-                   UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *_Nonnull action){}];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *_Nonnull action){}];
 
-                   [alert addAction:cancelAction];
+            [alert addAction:cancelAction];
 
-                   [self presentViewController:alert animated:YES completion:^{}];
-               }
-               else {
-                   //Get the array of movies
-                   NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                
-                   self.destinationCoordinates = dataDictionary[@"results"][0][@"geometry"][@"location"];
-                   
-                   [self setupMap];
-                
-                   NSLog(@"%@", dataDictionary[@"results"][0][@"geometry"][@"location"]);
-               }
-           }];
-        [task resume];
-
+            [self presentViewController:alert animated:YES completion:^{}];
+        }
+        else {
+            NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+         
+            self.destinationCoordinates = dataDictionary[@"results"][0][@"geometry"][@"location"];
+            
+            [self setupMap];
+         
+            NSLog(@"%@", dataDictionary[@"results"][0][@"geometry"][@"location"]);
+        }
+    }];
 }
-
 
 //from maps api docs
 - (void)dealloc {
