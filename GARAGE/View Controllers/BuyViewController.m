@@ -17,6 +17,7 @@
 @interface BuyViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *listings;
+@property (strong, nonatomic) NSMutableArray *filteredListings;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (strong, nonatomic) PFUser *user;
 @property (weak, nonatomic) IBOutlet UIView *popUpView;
@@ -62,7 +63,7 @@
     
     self.user = PFUser.currentUser;
         
-    [self getCurrentLocation];
+    [self queryListings];
 
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl setTintColor:[UIColor whiteColor]];
@@ -86,10 +87,8 @@
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *listings, NSError *error) {
         if (listings != nil) {
-            NSMutableArray *betaFilteredListings = [[NSMutableArray alloc] init];
-            NSMutableArray *__strong*filteredListings;
-            [utils filterListings:listings byDistance:self.defaultDistance fromCurrentLocation:self.currentLocation into:&filteredListings];
-            self.listings = *filteredListings;
+            self.listings = listings;
+            [self filterListings];
             [self.tableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
@@ -230,11 +229,27 @@
 }
 
 #pragma mark - filtering by distance
-- (void) getCurrentLocation{
+- (void) filterListings{
     [utils getCurrentLocationWithCompletion:^(CLLocation * _Nonnull currentLocation, INTULocationAccuracy achievedAccuracy, INTULocationStatus status) {
         if (status == INTULocationStatusSuccess) {
             self.currentLocation = currentLocation.coordinate;
-            [self queryListings];
+            
+            for(Listing *listing in self.listings){
+                CLLocationCoordinate2D destinationCoords = CLLocationCoordinate2DMake(listing.addressLat, listing.addressLong);
+                
+                [utils getDistanceFrom:self.currentLocation To:destinationCoords WithCompletion:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                    if(error != nil) NSLog(@"Error getting distance: %@", error.localizedDescription);
+                    else{
+                        NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                        double distanceInMiles = [utils kmToMiles:[NSString stringWithFormat:@"%@", dataDictionary[@"rows"][0][@"elements"][0][@"distance"][@"text"]]];
+                        
+                        if(distanceInMiles > self.defaultDistance){
+                            [self.listings removeObject:listing];
+                        }
+                    }
+                    [self.tableView reloadData];
+                }];
+            }
         }
         else if (status == INTULocationStatusTimedOut) {
 

@@ -170,8 +170,8 @@
             filePath = "GARAGE/View Controllers/BuyViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "252"
-            endingLineNumber = "252"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
             landmarkName = "BuyViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -426,8 +426,8 @@
             filePath = "GARAGE/View Controllers/BuyViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "-queryListings"
             landmarkType = "7">
          </BreakpointContent>
@@ -435,16 +435,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "218CD842-D9CC-451A-BE20-9AEF1CA79073"
+            uuid = "ABB12939-BC9F-48D5-A9DC-EDC0CF9AF73F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GARAGE/View Controllers/BuyViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "-queryListings"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
+            landmarkName = "-filterListings"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2E1F93A7-E3F8-4C7D-B6B2-F2B20AC90EF7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GARAGE/View Controllers/BuyViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
+            landmarkName = "-filterListings"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
