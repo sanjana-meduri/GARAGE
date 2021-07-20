@@ -28,11 +28,7 @@ TODO: popup on search page
 
 Today:
 
-<img src="./readme_assets/gifs/day6.gif" width=200 height=500>
-<img src="./readme_assets/rounded_table_view/1.png" width=200 height=500>
-<img src="./readme_assets/rounded_table_view/2.png" width=200 height=500>
-<img src="./readme_assets/rounded_table_view/3.png" width=200 height=500>
-<img src="./readme_assets/rounded_table_view/4.png" width=200 height=500>
+added filtering by default radius feature
 
 Challenges Solved Today:
 
@@ -47,6 +43,12 @@ Unsolved Challenges from Today:
 
 
 Previous Features:
+
+<img src="./readme_assets/gifs/day6.gif" width=200 height=500>
+<img src="./readme_assets/rounded_table_view/1.png" width=200 height=500>
+<img src="./readme_assets/rounded_table_view/2.png" width=200 height=500>
+<img src="./readme_assets/rounded_table_view/3.png" width=200 height=500>
+<img src="./readme_assets/rounded_table_view/4.png" width=200 height=500>
 
 <img src="./readme_assets/gifs/day4.gif" width=200 height=500>
 
