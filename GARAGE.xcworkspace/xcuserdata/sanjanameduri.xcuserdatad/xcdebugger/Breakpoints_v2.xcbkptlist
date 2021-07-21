@@ -170,10 +170,10 @@
             filePath = "GARAGE/View Controllers/BuyViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
-            landmarkName = "-prepareForSegue:sender:"
-            landmarkType = "7">
+            startingLineNumber = "281"
+            endingLineNumber = "281"
+            landmarkName = "BuyViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -378,9 +378,9 @@
             filePath = "GARAGE/Utils/utils.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "+filterListings:byDistance:fromCurrentLocation:into:"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "+getDistanceFrom:To:WithCompletion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -394,8 +394,8 @@
             filePath = "GARAGE/Utils/utils.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "+filterListings:byDistance:fromCurrentLocation:into:"
             landmarkType = "7">
          </BreakpointContent>
@@ -410,8 +410,8 @@
             filePath = "GARAGE/Utils/utils.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "+filterListings:byDistance:fromCurrentLocation:into:"
             landmarkType = "7">
          </BreakpointContent>
@@ -426,8 +426,8 @@
             filePath = "GARAGE/View Controllers/BuyViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "-assignDistance"
             landmarkType = "7">
          </BreakpointContent>

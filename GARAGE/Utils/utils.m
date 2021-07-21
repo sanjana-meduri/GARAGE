@@ -66,17 +66,6 @@ int numListings = 20;
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
     
     NSURLSessionTask *task = [session dataTaskWithRequest:request completionHandler:completion];
-                              
-//                              (NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-//        if (error != nil) {
-//            NSLog(@"Error getting distnace between points:%@", error.localizedDescription);
-//        }
-//        else{
-//            NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-//            distance = [self kmToMiles:[NSString stringWithFormat:@"%@", dataDictionary[@"rows"][0][@"elements"][0][@"distance"][@"text"]]];
-//            checkRadius = (distance <= distanceRadius);
-//        }
-//    }];
     [task resume];
 }
 

@@ -16,6 +16,7 @@
 		E40BBDA9269C929F0039166B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBDA8269C929F0039166B /* main.m */; };
 		E40BBDB3269C92A00039166B /* GARAGETests.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBDB2269C92A00039166B /* GARAGETests.m */; };
 		E40BBDBE269C92A00039166B /* GARAGEUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBDBD269C92A00039166B /* GARAGEUITests.m */; };
+		E41CCD3926A8913F005234B4 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41CCD3826A8913F005234B4 /* SettingsTableViewController.m */; };
 		E43FD2F3269DEB31004BCBA4 /* MyInventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD2F2269DEB31004BCBA4 /* MyInventoryViewController.m */; };
 		E43FD2F6269DEC8F004BCBA4 /* InventoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD2F5269DEC8F004BCBA4 /* InventoryCell.m */; };
 		E43FD2F9269E32B3004BCBA4 /* ForSaleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD2F8269E32B3004BCBA4 /* ForSaleCell.m */; };
@@ -81,6 +82,8 @@
 		E40BBDB9269C92A00039166B /* GARAGEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GARAGEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E40BBDBD269C92A00039166B /* GARAGEUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GARAGEUITests.m; sourceTree = "<group>"; };
 		E40BBDBF269C92A00039166B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E41CCD3726A8913F005234B4 /* SettingsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		E41CCD3826A8913F005234B4 /* SettingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		E43FD2F1269DEB31004BCBA4 /* MyInventoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInventoryViewController.h; sourceTree = "<group>"; };
 		E43FD2F2269DEB31004BCBA4 /* MyInventoryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyInventoryViewController.m; sourceTree = "<group>"; };
 		E43FD2F4269DEC8F004BCBA4 /* InventoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InventoryCell.h; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 				E43FD31C26A0B58A004BCBA4 /* PurchasedViewController.m */,
 				E45C6D3F26A1DBA8004F900A /* SearchViewController.h */,
 				E45C6D4026A1DBA8004F900A /* SearchViewController.m */,
+				E41CCD3726A8913F005234B4 /* SettingsTableViewController.h */,
+				E41CCD3826A8913F005234B4 /* SettingsTableViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -587,6 +592,7 @@
 				E40BBDA9269C929F0039166B /* main.m in Sources */,
 				E43FD30E269F49BC004BCBA4 /* BuyMapViewController.m in Sources */,
 				E43FD31D26A0B58A004BCBA4 /* PurchasedViewController.m in Sources */,
+				E41CCD3926A8913F005234B4 /* SettingsTableViewController.m in Sources */,
 				E40BBD9B269C929F0039166B /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

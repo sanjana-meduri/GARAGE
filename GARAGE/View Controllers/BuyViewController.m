@@ -113,7 +113,6 @@
                     if(error != nil) NSLog(@"Error getting distance: %@", error.localizedDescription);
                     else{
                         NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                        NSString *name = listing.name;
                         double distanceInMiles = [utils kmToMiles:[NSString stringWithFormat:@"%@", dataDictionary[@"rows"][0][@"elements"][0][@"distance"][@"text"]]];
                                                 
                         [self.distanceDictionary setObject:[NSNumber numberWithDouble:distanceInMiles] forKey:listing.address];
