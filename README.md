@@ -24,11 +24,12 @@ GARAGE is an app that allows a user to decrease clutter in their house by puttin
 
 ## Current Progress
 
-TODO: popup on search page
+TODO: popup on search page, search filtering
 
 Today:
 
-added filtering by default radius feature
+cached distance data so it didn't have to recalculate distance every time, and added a settings page (corresponding screenshots are in commit comments)
+
 
 Challenges Solved Today:
 
