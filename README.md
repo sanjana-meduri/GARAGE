@@ -35,6 +35,7 @@ buy page on 500 mile filter:
 <img src="./readme_assets/distancefilter/500mile.png" width=200 height=500>
 
 buy page on 20 mile filter:
+
 <img src="./readme_assets/distancefilter/20mile.png" width=200 height=500>
 
 Challenges Solved Today:
