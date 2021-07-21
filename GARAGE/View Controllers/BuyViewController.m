@@ -35,6 +35,7 @@
 @property (strong, nonatomic) Listing *listing;
 @property (assign, nonatomic) double defaultDistance;
 @property (assign, nonatomic) CLLocationCoordinate2D currentLocation;
+@property (strong, nonatomic) NSMutableDictionary *distanceDictionary;
 
 @end
 
@@ -42,6 +43,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.distanceDictionary = [[NSMutableDictionary alloc] init];
     
     self.defaultDistance = 20;
     
@@ -88,7 +91,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *listings, NSError *error) {
         if (listings != nil) {
             self.listings = listings;
-            [self filterListings];
+            [self assignDistance];
             [self.tableView reloadData];
         } else {
             NSLog(@"%@", error.localizedDescription);
@@ -98,6 +101,37 @@
     [self.refreshControl endRefreshing];
 }
 
+- (void) assignDistance{
+    [utils getCurrentLocationWithCompletion:^(CLLocation * _Nonnull currentLocation, INTULocationAccuracy achievedAccuracy, INTULocationStatus status) {
+        if (status == INTULocationStatusSuccess) {
+            self.currentLocation = currentLocation.coordinate;
+            
+            for(Listing *listing in self.listings){
+                CLLocationCoordinate2D destinationCoords = CLLocationCoordinate2DMake(listing.addressLat, listing.addressLong);
+                
+                [utils getDistanceFrom:self.currentLocation To:destinationCoords WithCompletion:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                    if(error != nil) NSLog(@"Error getting distance: %@", error.localizedDescription);
+                    else{
+                        NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                        NSString *name = listing.name;
+                        double distanceInMiles = [utils kmToMiles:[NSString stringWithFormat:@"%@", dataDictionary[@"rows"][0][@"elements"][0][@"distance"][@"text"]]];
+                                                
+                        [self.distanceDictionary setObject:[NSNumber numberWithDouble:distanceInMiles] forKey:listing.address];
+                        NSLog(@"%@", self.distanceDictionary);
+                        [self filterListings];
+                    }
+                }];
+            }
+        }
+        else if (status == INTULocationStatusTimedOut) {
+
+        }
+        else {
+            NSLog(@"Error getting current location: %ld", status);
+        }
+    }];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return 1;
 }
@@ -105,7 +139,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     BuyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BuyCell"];
     
-    Listing *listing = self.listings[indexPath.section];
+    Listing *listing = self.filteredListings[indexPath.section];
     
     cell.imageView.file = listing.image;
     [cell.imageView loadInBackground];
@@ -135,7 +169,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.listings.count;
+    return self.filteredListings.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -149,7 +183,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    self.listing = self.listings[indexPath.section];
+    self.listing = self.filteredListings[indexPath.section];
     self.popupNameLabel.text = self.listing.name;
     
     self.popupSellerLabel.text = self.listing.seller[@"username"];
@@ -230,34 +264,15 @@
 
 #pragma mark - filtering by distance
 - (void) filterListings{
-    [utils getCurrentLocationWithCompletion:^(CLLocation * _Nonnull currentLocation, INTULocationAccuracy achievedAccuracy, INTULocationStatus status) {
-        if (status == INTULocationStatusSuccess) {
-            self.currentLocation = currentLocation.coordinate;
-            
+    self.filteredListings = [self.listings mutableCopy];
+    for(NSString *address in self.distanceDictionary){
+        if([[self.distanceDictionary objectForKey:address] doubleValue] > self.defaultDistance){
             for(Listing *listing in self.listings){
-                CLLocationCoordinate2D destinationCoords = CLLocationCoordinate2DMake(listing.addressLat, listing.addressLong);
-                
-                [utils getDistanceFrom:self.currentLocation To:destinationCoords WithCompletion:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-                    if(error != nil) NSLog(@"Error getting distance: %@", error.localizedDescription);
-                    else{
-                        NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-                        double distanceInMiles = [utils kmToMiles:[NSString stringWithFormat:@"%@", dataDictionary[@"rows"][0][@"elements"][0][@"distance"][@"text"]]];
-                        
-                        if(distanceInMiles > self.defaultDistance){
-                            [self.listings removeObject:listing];
-                        }
-                    }
-                    [self.tableView reloadData];
-                }];
+                if([listing.address isEqual:address]) [self.filteredListings removeObject:listing];
             }
         }
-        else if (status == INTULocationStatusTimedOut) {
-
-        }
-        else {
-            NSLog(@"Error getting current location: %ld", status);
-        }
-    }];
+    }
+    [self.tableView reloadData];
 }
 
 
@@ -271,7 +286,7 @@
         UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
         
-        Listing *tappedListing = self.listings[indexPath.section];
+        Listing *tappedListing = self.filteredListings[indexPath.section];
         detailsViewController.listing = tappedListing;
     }
     
