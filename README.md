@@ -28,14 +28,14 @@ TODO: popup on search page, search filtering
 
 Today:
 
-cached distance data so it didn't have to recalculate distance every time, and added a settings page (corresponding screenshots are in commit comments)
+cached distance data so it didn't have to recalculate distance every time, and added a settings page (settings screenshot in commit comments)
 
 buy page on 500 mile filter:
 
 <img src="./readme_assets/distancefilter/500mile.png" width=200 height=500>
 
 buy page on 20 mile filter:
-<img src="./readme_assets/distancegilter/20mile.png" width=200 height=500>
+<img src="./readme_assets/distancefilter/20mile.png" width=200 height=500>
 
 Challenges Solved Today:
 
