@@ -25,12 +25,23 @@
 @property (strong, nonatomic) NSArray* listings;
 @property (strong, nonatomic) PFUser *user;
 
+@property (strong, nonatomic) NSMutableArray* filteredListings;
+@property (assign, nonatomic) NSInteger radiusLimit;
+@property (assign, nonatomic) BOOL drivingDistance;
+@property (assign, nonatomic) CLLocationCoordinate2D currentLocation;
+@property (strong, nonatomic) NSMutableDictionary *distanceDictionary;
+
 @end
 
 @implementation SearchViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.radiusLimit = 8;
+    self.drivingDistance = YES;
+    
+    self.distanceDictionary = [[NSMutableDictionary alloc] init];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -81,6 +92,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *listings, NSError *error) {
         if (listings != nil) {
             self.listings = listings;
+            [self assignDistance:self.drivingDistance];
             [self.tableView reloadData];
             return;
         }
@@ -140,7 +152,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SearchBuyCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchBuyCell"];
     
-    Listing *listing = self.listings[indexPath.section];
+    Listing *listing = self.filteredListings[indexPath.section];
     
     cell.imageView.file = listing.image;
     [cell.imageView loadInBackground];
@@ -169,7 +181,7 @@
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return self.listings.count;
+    return self.filteredListings.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -201,6 +213,61 @@
 - (int) medPrice{
     return 100;
 }
+
+
+- (void) assignDistance:(BOOL) drivingDistance{
+    [utils getCurrentLocationWithCompletion:^(CLLocation * _Nonnull currentLocation, INTULocationAccuracy achievedAccuracy, INTULocationStatus status) {
+        if (status == INTULocationStatusSuccess) {
+            self.currentLocation = currentLocation.coordinate;
+            
+            for(Listing *listing in self.listings){
+                CLLocationCoordinate2D destinationCoords = CLLocationCoordinate2DMake(listing.addressLat, listing.addressLong);
+                
+                [utils getDistanceFrom:self.currentLocation To:destinationCoords WithCompletion:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+                    if(error != nil) NSLog(@"Error getting distance: %@", error.localizedDescription);
+                    else{
+                        NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+                        double distance = 0;
+                        if (drivingDistance)
+                            distance = [utils kmToMiles:[NSString stringWithFormat:@"%@", dataDictionary[@"rows"][0][@"elements"][0][@"distance"][@"text"]]];
+                        else{
+                            NSString *timeString = [NSString stringWithFormat:@"%@", dataDictionary[@"rows"][0][@"elements"][0][@"duration"][@"text"]];
+                            if([timeString rangeOfString:@"hr"].location == NSNotFound)
+                                distance = [[NSString stringWithFormat:@"%@", dataDictionary[@"rows"][0][@"elements"][0][@"duration"][@"text"]] doubleValue];
+                            else
+                                distance = 60 * [[NSString stringWithFormat:@"%@", dataDictionary[@"rows"][0][@"elements"][0][@"duration"][@"text"]] doubleValue];
+                        }
+                                                
+                        [self.distanceDictionary setObject:[NSNumber numberWithDouble:distance] forKey:listing.address];
+                        NSLog(@"%@", self.distanceDictionary);
+                        [self filterListings];
+                    }
+                }];
+            }
+        }
+        else if (status == INTULocationStatusTimedOut) {
+
+        }
+        else {
+            NSLog(@"Error getting current location: %ld", status);
+        }
+    }];
+}
+
+- (void) filterListings{
+    self.filteredListings = [self.listings mutableCopy];
+    for(NSString *address in self.distanceDictionary){
+        if([[self.distanceDictionary objectForKey:address] doubleValue] > self.radiusLimit){
+            for(Listing *listing in self.listings){
+                if([listing.address isEqual:address]) [self.filteredListings removeObject:listing];
+            }
+        }
+    }
+    [self.tableView reloadData];
+}
+
+
+
 
 /*
 #pragma mark - Navigation
