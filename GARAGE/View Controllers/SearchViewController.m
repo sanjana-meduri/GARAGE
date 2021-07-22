@@ -426,7 +426,9 @@
         self.popupPurchasedView.alpha = 0;
         self.popupDetailsView.alpha = 0;
         self.detailsBlurEffectView.alpha = 0;
-    }];    
+    }];
+    
+    [self queryListings];
 }
 
 #pragma mark - Navigation
