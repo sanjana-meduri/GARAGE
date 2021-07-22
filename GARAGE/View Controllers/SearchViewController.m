@@ -105,6 +105,8 @@
     
     self.user = PFUser.currentUser;
     
+    [self queryListings];
+        
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl setTintColor:[UIColor whiteColor]];
     [self.refreshControl addTarget:self action:@selector(queryListings) forControlEvents:UIControlEventValueChanged];
