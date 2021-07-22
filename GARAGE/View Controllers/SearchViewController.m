@@ -18,6 +18,8 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *priceControl;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *distanceOrTimeControl;
 @property (weak, nonatomic) IBOutlet UIView *filterPopupView;
 @property (weak, nonatomic) IBOutlet UITextField *radiusField;
@@ -103,6 +105,11 @@
     
     self.user = PFUser.currentUser;
     
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl setTintColor:[UIColor whiteColor]];
+    [self.refreshControl addTarget:self action:@selector(queryListings) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    
 }
 
 - (void) queryListings{
@@ -143,6 +150,7 @@
         NSLog(@"%@", error.localizedDescription);
     }];
     [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
 }
 
 - (IBAction)onBack:(id)sender {
