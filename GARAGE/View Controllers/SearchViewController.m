@@ -9,6 +9,7 @@
 #import "Listing.h"
 #import "Parse/Parse.h"
 #import "utils.h"
+#import "BuyMapViewController.h"
 #import "SearchBuyCell.h"
 
 @interface SearchViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -38,6 +39,20 @@
 
 @property (assign, nonatomic) NSInteger defaultRadiusLimit;
 
+@property (weak, nonatomic) IBOutlet UIView *popupDetailsView;
+@property (weak, nonatomic) IBOutlet PFImageView *popupImageView;
+@property (weak, nonatomic) IBOutlet UILabel *popupNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *popupSellerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *popupPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *popupDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *popupDecsriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *popupConditionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *popupAddressLabel;
+@property (strong, nonatomic) Listing *listing;
+@property (strong, nonatomic) UIVisualEffectView *detailsBlurEffectView;
+@property (weak, nonatomic) IBOutlet UIView *popupPurchasedView;
+@property (weak, nonatomic) IBOutlet UILabel *purchasedMessageLabel;
+
 @end
 
 @implementation SearchViewController
@@ -60,7 +75,17 @@
     self.blurEffectView.frame = self.view.bounds;
     self.blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.blurEffectView.alpha = 0;
-    [self.view insertSubview:self.blurEffectView atIndex:5];
+    [self.view insertSubview:self.blurEffectView atIndex:7];
+    
+    self.popupDetailsView.alpha = 0;
+    self.popupPurchasedView.alpha = 0;
+    
+    UIBlurEffect *detailsBlurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    self.detailsBlurEffectView = [[UIVisualEffectView alloc] initWithEffect:detailsBlurEffect];
+    self.detailsBlurEffectView.frame = self.view.bounds;
+    self.detailsBlurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.detailsBlurEffectView.alpha = 0;
+    [self.view insertSubview:self.detailsBlurEffectView atIndex:6];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -323,15 +348,96 @@
     }];
 }
 
+- (IBAction)onPopupClose:(id)sender {
+    [UIView animateWithDuration:0.4 animations:^(void) {
+        self.popupDetailsView.alpha = 0;
+        self.popupPurchasedView.alpha = 0;
+        self.detailsBlurEffectView.alpha = 0;
+    }];
+}
 
-/*
+- (IBAction)onPopupBuy:(id)sender {
+    self.listing.alreadySold = TRUE;
+    [self.listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
+                if (succeeded) {
+                    NSLog(@"successfully sold item");
+                } else {
+                    NSLog(@"Problem selling item: %@", error.localizedDescription);
+                }}];
+    
+    NSString *itemName = self.listing.name;
+    NSString *itemPrice = [self.listing.price stringValue];
+    NSString *itemAddress = self.listing.address;
+    NSString *sellerName = self.listing.seller[@"username"];
+    NSString *sellerEmail = self.listing.itemEmail;
+    
+    NSString *purchasedMessage = [NSString stringWithFormat:@"You have requested to purchase %@ for $%@ from %@. Contact %@ at %@ to finalize the payment details and pick up your item from %@.", itemName, itemPrice, sellerName, sellerName, sellerEmail, itemAddress];
+    
+    self.purchasedMessageLabel.text = purchasedMessage;
+    self.popupPurchasedView.layer.cornerRadius = 15;
+
+    [UIView animateWithDuration:0.4 animations:^(void) {
+        self.popupPurchasedView.alpha = 1;
+        self.detailsBlurEffectView.alpha = 1;
+    }];
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.listing = self.filteredListings[indexPath.section];
+    self.popupNameLabel.text = self.listing.name;
+    
+    self.popupSellerLabel.text = self.listing.seller[@"username"];
+    self.popupPriceLabel.text = [@"$" stringByAppendingString:[self.listing.price stringValue]];
+    
+    NSDate *creationDate = self.listing.createdAt;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM/dd/yy"];
+    NSString *stringFromDate = [formatter stringFromDate:creationDate];
+    
+    self.popupDateLabel.text = stringFromDate;
+        
+    self.popupDecsriptionLabel.text = self.listing.details;
+    self.popupConditionLabel.text = self.listing.condition;
+    self.popupAddressLabel.text = self.listing.address;
+    
+    self.popupImageView.layer.cornerRadius = 15;
+    self.popupImageView.file = self.listing.image;
+    [self.popupImageView loadInBackground];
+    
+    self.popupDetailsView.layer.cornerRadius = 15;
+    
+    UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onDoubleTap)];
+    doubleTap.numberOfTapsRequired = 2;
+    [self.popupAddressLabel addGestureRecognizer:doubleTap];
+    
+    [UIView animateWithDuration:0.4 animations:^(void) {
+        self.popupDetailsView.alpha = 1;
+        self.detailsBlurEffectView.alpha = 1;
+    }];
+}
+
+- (void) onDoubleTap{
+    [self performSegueWithIdentifier:@"mapSegue" sender:nil];
+}
+
+- (IBAction)onPurchasedMessageClose:(id)sender {
+    [UIView animateWithDuration:0.4 animations:^(void) {
+        self.popupPurchasedView.alpha = 0;
+        self.popupDetailsView.alpha = 0;
+        self.detailsBlurEffectView.alpha = 0;
+    }];    
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqual:@"mapSegue"]){
+        BuyMapViewController *mapViewController = [segue destinationViewController];
+        mapViewController.listing = self.listing;
+    }
 }
-*/
+
 
 @end
