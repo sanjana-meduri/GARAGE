@@ -17,6 +17,11 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *priceControl;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (weak, nonatomic) IBOutlet UISegmentedControl *distanceOrTimeControl;
+@property (weak, nonatomic) IBOutlet UIView *filterPopupView;
+@property (weak, nonatomic) IBOutlet UITextField *radiusField;
+@property (strong, nonatomic) UIVisualEffectView *blurEffectView;
+
 @property (strong, nonatomic) NSString *tagFilter;
 @property (strong, nonatomic) NSString *searchFilter;
 @property (assign, nonatomic) BOOL searchByUser;
@@ -31,6 +36,8 @@
 @property (assign, nonatomic) CLLocationCoordinate2D currentLocation;
 @property (strong, nonatomic) NSMutableDictionary *distanceDictionary;
 
+@property (assign, nonatomic) NSInteger defaultRadiusLimit;
+
 @end
 
 @implementation SearchViewController
@@ -38,10 +45,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.radiusLimit = 8;
+    self.defaultRadiusLimit = 30;
+    
+    self.radiusLimit = self.defaultRadiusLimit;
     self.drivingDistance = YES;
     
     self.distanceDictionary = [[NSMutableDictionary alloc] init];
+    
+    self.filterPopupView.alpha = 0;
+    self.filterPopupView.layer.cornerRadius = 15;
+    
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    self.blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    self.blurEffectView.frame = self.view.bounds;
+    self.blurEffectView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    self.blurEffectView.alpha = 0;
+    [self.view insertSubview:self.blurEffectView atIndex:5];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -128,13 +147,25 @@
 }
 
 - (IBAction)onFilter:(id)sender {
+    [self.view endEditing:YES];
+    
     self.searchField.text = self.searchFilter;
     
     [self setPriceRange];
     
     self.tagFilter = self.tagField.text;
     
+    [self setDistanceOrTime];
+    
+    if([self.radiusField.text isEqual:@""]) self.radiusLimit = self.defaultRadiusLimit;
+    else self.radiusLimit = [self.radiusField.text intValue];
+    
     [self queryListings];
+    
+    [UIView animateWithDuration:0.4 animations:^(void) {
+        self.filterPopupView.alpha = 0;
+        self.blurEffectView.alpha = 0;
+    }];
 }
 
 
@@ -143,6 +174,11 @@
     if ([self.priceControl selectedSegmentIndex] == 1) self.priceFilter = @"$";
     if ([self.priceControl selectedSegmentIndex] == 2) self.priceFilter = @"$$";
     if ([self.priceControl selectedSegmentIndex] == 3) self.priceFilter = @"$$$";
+}
+
+- (void) setDistanceOrTime{
+    if ([self.distanceOrTimeControl selectedSegmentIndex] == 0) self.drivingDistance = YES;
+    if ([self.distanceOrTimeControl selectedSegmentIndex] == 1) self.drivingDistance = NO;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -202,6 +238,9 @@
     self.tagFilter = @"";
     self.searchFilter = @"";
     self.priceFilter = @"";
+    
+    self.distanceOrTimeControl.selectedSegmentIndex = 0;
+    self.radiusField.text = @"";
     
     [self queryListings];
 }
@@ -266,7 +305,20 @@
     [self.tableView reloadData];
 }
 
+- (IBAction)onAdvancedFilters:(id)sender {
+    [UIView animateWithDuration:0.4 animations:^(void) {
+        self.filterPopupView.alpha = 1;
+        self.blurEffectView.alpha = 1;
+    }];
+}
 
+- (IBAction)onCancelFilter:(id)sender {
+    [self.view endEditing:YES];
+    [UIView animateWithDuration:0.4 animations:^(void) {
+        self.filterPopupView.alpha = 0;
+        self.blurEffectView.alpha = 0;
+    }];
+}
 
 
 /*
