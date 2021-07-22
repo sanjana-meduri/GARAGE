@@ -242,6 +242,9 @@
     self.distanceOrTimeControl.selectedSegmentIndex = 0;
     self.radiusField.text = @"";
     
+    self.drivingDistance = YES;
+    self.radiusLimit = self.defaultRadiusLimit;
+    
     [self queryListings];
 }
 
