@@ -634,7 +634,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mlE-i1-cV1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4642" y="-1445"/>
+            <point key="canvasLocation" x="3062" y="-2347"/>
         </scene>
         <!--Buy-->
         <scene sceneID="Pyu-NX-xjJ">
@@ -873,11 +873,7 @@
                                 <action selector="onBack:" destination="Vts-Rz-6qN" id="Jf1-oX-mNw"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="text.magnifyingglass" catalog="system" id="L9A-Wc-jy1">
-                            <connections>
-                                <segue destination="YsS-uX-RqU" kind="presentation" modalPresentationStyle="fullScreen" id="tSb-LE-eKt"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="text.magnifyingglass" catalog="system" id="L9A-Wc-jy1"/>
                     </navigationItem>
                     <connections>
                         <outlet property="buyPopupView" destination="61t-be-SOL" id="YNd-PK-RwJ"/>
@@ -896,7 +892,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kd0-o6-cxh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5453.8461538461534" y="-1445.260663507109"/>
+            <point key="canvasLocation" x="3874" y="-2347"/>
         </scene>
         <!--Buy Details View Controller-->
         <scene sceneID="oe7-Kt-Nsn">
@@ -1065,7 +1061,7 @@
             </objects>
             <point key="canvasLocation" x="5454" y="-2672"/>
         </scene>
-        <!--Search-->
+        <!--Buy-->
         <scene sceneID="4fr-7m-Mfh">
             <objects>
                 <viewController storyboardIdentifier="SearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fra-u0-gtm" customClass="SearchViewController" sceneMemberID="viewController">
@@ -1424,7 +1420,7 @@
                             <constraint firstItem="Zwx-ke-22Z" firstAttribute="trailing" secondItem="vaP-0J-qEb" secondAttribute="trailing" constant="32" id="xjP-YT-Qnt"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="DU3-Pf-tei">
+                    <navigationItem key="navigationItem" title="Buy" id="DU3-Pf-tei">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.backward" catalog="system" id="EAd-J2-jSt">
                             <connections>
                                 <action selector="onBack:" destination="fra-u0-gtm" id="bjn-GW-OFV"/>
@@ -1730,7 +1726,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Buy"/>
                                 <connections>
-                                    <segue destination="0QL-dR-MWx" kind="presentation" modalPresentationStyle="fullScreen" id="97I-qL-2e8"/>
+                                    <segue destination="YsS-uX-RqU" kind="presentation" modalPresentationStyle="fullScreen" id="n84-KZ-0tD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9o-Ny-WOY">
