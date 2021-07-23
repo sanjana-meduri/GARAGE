@@ -332,10 +332,32 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gli-Bm-NBo">
+                                                    <rect key="frame" x="299" y="138" width="45" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="45" id="dHG-1w-avm"/>
+                                                        <constraint firstAttribute="height" constant="30" id="mdH-LL-DAK"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Delete">
+                                                        <color key="titleColor" systemColor="systemRedColor"/>
+                                                    </state>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUi-2k-Dry">
+                                                    <rect key="frame" x="288" y="112" width="66" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="66" id="Lye-g6-lJZ"/>
+                                                        <constraint firstAttribute="height" constant="30" id="SC9-Wm-Na3"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Stop Sale"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="FUi-2k-Dry" secondAttribute="trailing" constant="20" id="5xh-qm-Wsn"/>
+                                                <constraint firstAttribute="bottom" secondItem="Gli-Bm-NBo" secondAttribute="bottom" constant="12" id="7ZV-n1-KLf"/>
+                                                <constraint firstAttribute="trailing" secondItem="Gli-Bm-NBo" secondAttribute="trailing" constant="30" id="D9W-or-VAd"/>
                                                 <constraint firstAttribute="bottom" secondItem="inv-cS-BxD" secondAttribute="bottom" constant="12" id="FeG-oV-w6m"/>
                                                 <constraint firstItem="l56-YU-Rol" firstAttribute="leading" secondItem="inv-cS-BxD" secondAttribute="trailing" constant="12" id="VkP-ZM-5Qc"/>
+                                                <constraint firstAttribute="bottom" secondItem="FUi-2k-Dry" secondAttribute="bottom" constant="38" id="ef3-Pm-lNu"/>
                                                 <constraint firstItem="7h7-U3-DLE" firstAttribute="leading" secondItem="inv-cS-BxD" secondAttribute="trailing" constant="12" id="ioC-h8-G09"/>
                                                 <constraint firstItem="7h7-U3-DLE" firstAttribute="top" secondItem="l56-YU-Rol" secondAttribute="bottom" constant="8" id="l9P-pI-gNz"/>
                                                 <constraint firstItem="inv-cS-BxD" firstAttribute="leading" secondItem="Aug-AU-7ei" secondAttribute="leading" constant="12" id="mmT-XY-TdL"/>
@@ -344,9 +366,11 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="deleteButton" destination="Gli-Bm-NBo" id="8Bl-5h-up9"/>
                                             <outlet property="imageView" destination="inv-cS-BxD" id="xYS-22-CdU"/>
                                             <outlet property="nameLabel" destination="l56-YU-Rol" id="IIL-YG-xEy"/>
                                             <outlet property="priceLabel" destination="7h7-U3-DLE" id="OVZ-DZ-7z3"/>
+                                            <outlet property="stopSaleButton" destination="FUi-2k-Dry" id="gzp-ZQ-i8e"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -38,7 +38,7 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl setTintColor:[UIColor blueColor]];
     [self.refreshControl addTarget:self action:@selector(queryListings) forControlEvents:UIControlEventValueChanged];
-    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    [self.tableView insertSubview:self.refreshControl atIndex:1];
 }
 
 - (void) queryListings{
@@ -76,8 +76,42 @@
     cell.nameLabel.text = listing.name;
     cell.priceLabel.text = [@"$" stringByAppendingString:[listing.price stringValue]];
     
+    cell.deleteButton.tag = indexPath.section;
+    [cell.deleteButton addTarget:self action:@selector(deleteCell:) forControlEvents:UIControlEventTouchUpInside];
+
+    
+    cell.stopSaleButton.tag = indexPath.section;
+    [cell.stopSaleButton addTarget:self action:@selector(stopSaleCell:) forControlEvents:UIControlEventTouchUpInside];
+
+    
     return cell;
     
+}
+
+- (void) deleteCell: (UIButton*) sender{
+    Listing *listing = self.listings[sender.tag];
+    [listing deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"successfully deleted item");
+            [self queryListings];
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"Problem deleting item: %@", error.localizedDescription);
+        }
+    }];
+}
+
+- (void) stopSaleCell: (UIButton*) sender{
+    Listing *listing = self.listings[sender.tag];
+    listing.inInventory = TRUE;
+    [listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
+                if (succeeded) {
+                    NSLog(@"successfully put the item up for sale");
+                    [self queryListings];
+                    [self.tableView reloadData];
+                } else {
+                    NSLog(@"Problem starting sale on item: %@", error.localizedDescription);
+                }}];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
