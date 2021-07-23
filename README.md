@@ -24,30 +24,7 @@ GARAGE is an app that allows a user to decrease clutter in their house by puttin
 
 ## Current Progress
 
-TODO: popup on search page, search filtering
-
-Today:
-
-cached distance data so it didn't have to recalculate distance every time, and added a settings page (settings screenshot in commit comments)
-
-buy page on 500 mile filter:
-
-<img src="./readme_assets/distancefilter/500mile.png" width=200 height=500>
-
-buy page on 20 mile filter:
-
-<img src="./readme_assets/distancefilter/20mile.png" width=200 height=500>
-
-Challenges Solved Today:
-
-- 
-
-Unsolved Challenges from Today:
-
-- creating a popup when you click the buy button
-    - worked for a couple hours on this using different classes, but it didn't end up working, will probably try it again as an optional feature
-- expandable table view cell
-    - tried to find an external library that did this, but didn't find one -- i will probably manually implement it as an optional feature
+<img src="./readme_assets/basic_functionality.MOV" width=200 height=500>
 
 
 Previous Features:
@@ -100,10 +77,12 @@ Previous Features:
 
 **Optional Nice-to-have Stories**
 
-- [ ] expandable cell to show details of item
-- [ ] show results within certain distance radius of user
+- [x] popup cell to show details of item
+- [x] show results within certain distance radius of user
+- [x] show results within certain time radius of user
+- [x] loading circle
 - [ ] settings page
-- [ ] details page in MyGarage tab with option to delete item and start sale on individual item
+- [x] details page in MyGarage tab with option to delete item and start sale on individual item
 - [ ] rent option
 - [ ] message a seller
 - [ ] favorite item
@@ -112,11 +91,13 @@ Previous Features:
 - [ ] upload user profile picture
 - [ ] user indicated preferred payment method
 - [ ] add multiple images for each listing
-- [ ] change default radius for browsing in settings
+- [x] change default radius for browsing in settings
 - [ ] keep track of what user has sold and amount
 - [ ] add notification to seller
 - [ ] tap on seller name to view seller page
-- [ ] use Directions API to show directions from current location to address 
+- [x] use Directions Matrix API to calculate distance from current location to address
+- [x] use Directions Matrix API to calculate time from current location to address
+- [ ] use Directions  API to calculate route from current location to address
 - [ ] recommended content
 
 ### 2. Screen Archetypes

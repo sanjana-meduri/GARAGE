@@ -109,6 +109,10 @@
   }
 }
 
+- (IBAction)onBack:(id)sender {
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
 /*
 #pragma mark - Navigation
 
