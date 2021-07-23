@@ -54,6 +54,7 @@
 @property (strong, nonatomic) UIVisualEffectView *detailsBlurEffectView;
 @property (weak, nonatomic) IBOutlet UIView *popupPurchasedView;
 @property (weak, nonatomic) IBOutlet UILabel *purchasedMessageLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -63,7 +64,6 @@
     [super viewDidLoad];
     
     self.defaultRadiusLimit = 30;
-    
     self.radiusLimit = self.defaultRadiusLimit;
     self.drivingDistance = YES;
     
@@ -105,6 +105,7 @@
     
     self.user = PFUser.currentUser;
     
+    [self.activityIndicator startAnimating];
     [self queryListings];
         
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -341,6 +342,7 @@
         }
     }
     [self.tableView reloadData];
+    [self.activityIndicator stopAnimating];
 }
 
 - (IBAction)onAdvancedFilters:(id)sender {

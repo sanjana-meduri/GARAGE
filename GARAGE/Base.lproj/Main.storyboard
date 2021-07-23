@@ -515,7 +515,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zN-rO-sRB">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zN-rO-sRB">
                                 <rect key="frame" x="20" y="147" width="350" height="615"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="lVt-Z1-EBc" customClass="PFImageView">
@@ -1383,6 +1383,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" id="dyl-XF-w5y">
+                                <rect key="frame" x="8" y="392" width="374" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ENQ-9J-gjY">
                                 <rect key="frame" x="276" y="96" width="31" height="30"/>
                                 <state key="normal" title="Item"/>
@@ -1657,6 +1662,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="dyl-XF-w5y" id="Jsv-MH-DQj"/>
                         <outlet property="distanceOrTimeControl" destination="x2q-73-6zK" id="m1K-x9-fiB"/>
                         <outlet property="filterPopupView" destination="g1J-KI-saf" id="Xu5-PT-IfO"/>
                         <outlet property="popupAddressLabel" destination="P58-5r-vcy" id="NXR-aV-EJV"/>
