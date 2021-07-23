@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void) postListing: ( UIImage * _Nullable )image withDescription: ( NSString * _Nullable )description withName: ( NSString * _Nullable )name withCondition:( NSString * _Nullable )condition withTag:( NSString * _Nullable )tag withAddress:( NSString * _Nullable )address withPrice:( NSNumber * _Nullable )price withCompletion: (PFBooleanResultBlock  _Nullable)completion;
 
++ (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image;
+
 @end
 
 NS_ASSUME_NONNULL_END
