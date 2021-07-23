@@ -24,7 +24,7 @@ GARAGE is an app that allows a user to decrease clutter in their house by puttin
 
 ## Current Progress
 
-<img src="./readme_assets/basic_functionality.MOV" width=200 height=500>
+<img src="./readme_assets/gifs/basic_functionality.gif" width=200 height=500>
 
 
 Previous Features:
