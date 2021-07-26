@@ -65,6 +65,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+
+    gradient.frame = self.view.bounds;
+    UIColor *lightColor = [UIColor colorWithRed: 0.75 green: 0.91 blue: 0.91 alpha: 1.00];
+    UIColor *darkColor = [UIColor colorWithRed: 0.38 green: 0.71 blue: 0.80 alpha: 1.00];
+    gradient.colors = @[(id)lightColor.CGColor, (id)darkColor.CGColor];
+
+    [self.view.layer insertSublayer:gradient atIndex:0];
+    
     self.defaultRadiusLimit = 30;
     self.radiusLimit = self.defaultRadiusLimit;
     self.drivingDistance = YES;
@@ -94,7 +103,7 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    self.tableView.backgroundColor = [UIColor systemOrangeColor];
+    self.tableView.backgroundColor = [UIColor clearColor];
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
         
     self.searchField.text = @"";
