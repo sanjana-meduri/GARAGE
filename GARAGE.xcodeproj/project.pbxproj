@@ -16,6 +16,7 @@
 		E40BBDA9269C929F0039166B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBDA8269C929F0039166B /* main.m */; };
 		E40BBDB3269C92A00039166B /* GARAGETests.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBDB2269C92A00039166B /* GARAGETests.m */; };
 		E40BBDBE269C92A00039166B /* GARAGEUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E40BBDBD269C92A00039166B /* GARAGEUITests.m */; };
+		E414454026AF145B006A9D73 /* LaunchPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E414453F26AF145B006A9D73 /* LaunchPageViewController.m */; };
 		E41CCD3926A8913F005234B4 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41CCD3826A8913F005234B4 /* SettingsTableViewController.m */; };
 		E43FD2F3269DEB31004BCBA4 /* MyInventoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD2F2269DEB31004BCBA4 /* MyInventoryViewController.m */; };
 		E43FD2F6269DEC8F004BCBA4 /* InventoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E43FD2F5269DEC8F004BCBA4 /* InventoryCell.m */; };
@@ -82,6 +83,8 @@
 		E40BBDB9269C92A00039166B /* GARAGEUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GARAGEUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E40BBDBD269C92A00039166B /* GARAGEUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GARAGEUITests.m; sourceTree = "<group>"; };
 		E40BBDBF269C92A00039166B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E414453E26AF145B006A9D73 /* LaunchPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchPageViewController.h; sourceTree = "<group>"; };
+		E414453F26AF145B006A9D73 /* LaunchPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchPageViewController.m; sourceTree = "<group>"; };
 		E41CCD3726A8913F005234B4 /* SettingsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		E41CCD3826A8913F005234B4 /* SettingsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 		E43FD2F1269DEB31004BCBA4 /* MyInventoryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyInventoryViewController.h; sourceTree = "<group>"; };
@@ -271,6 +274,8 @@
 				E45C6D4026A1DBA8004F900A /* SearchViewController.m */,
 				E41CCD3726A8913F005234B4 /* SettingsTableViewController.h */,
 				E41CCD3826A8913F005234B4 /* SettingsTableViewController.m */,
+				E414453E26AF145B006A9D73 /* LaunchPageViewController.h */,
+				E414453F26AF145B006A9D73 /* LaunchPageViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -577,6 +582,7 @@
 				E43FD2FC269E32C9004BCBA4 /* ForSaleViewController.m in Sources */,
 				E45C6D5026A1EF10004F900A /* SearchBuyCell.m in Sources */,
 				E43FD2F3269DEB31004BCBA4 /* MyInventoryViewController.m in Sources */,
+				E414454026AF145B006A9D73 /* LaunchPageViewController.m in Sources */,
 				E43FD31126A088AD004BCBA4 /* SignUpViewController.m in Sources */,
 				E43FD302269F3A46004BCBA4 /* BrowseViewController.m in Sources */,
 				E45C6D4126A1DBA8004F900A /* SearchViewController.m in Sources */,
