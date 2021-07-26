@@ -11,6 +11,8 @@
 #import "utils.h"
 #import "BuyMapViewController.h"
 #import "SearchBuyCell.h"
+#import "LoginViewController.h"
+#import "SceneDelegate.h"
 
 @interface SearchViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
@@ -441,6 +443,14 @@
     }];
     
     [self queryListings];
+}
+- (IBAction)onLogout:(id)sender {
+    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {}];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"RootViewController"];
+    myDelegate.window.rootViewController = loginViewController;
 }
 
 #pragma mark - Navigation
