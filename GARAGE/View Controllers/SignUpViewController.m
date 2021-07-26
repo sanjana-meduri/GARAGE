@@ -12,6 +12,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *usernameLabel;
 @property (weak, nonatomic) IBOutlet UITextField *passwordLabel;
 @property (weak, nonatomic) IBOutlet UITextField *emailLabel;
+@property (weak, nonatomic) IBOutlet UIButton *signupButton;
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+@property (weak, nonatomic) IBOutlet UIImageView *logoImageView;
 
 @end
 
@@ -19,7 +22,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+
+    gradient.frame = self.view.bounds;
+    UIColor *lightColor = [UIColor colorWithRed: 0.75 green: 0.91 blue: 0.91 alpha: 1.00];
+    UIColor *darkColor = [UIColor colorWithRed: 0.38 green: 0.71 blue: 0.80 alpha: 1.00];
+    gradient.colors = @[(id)lightColor.CGColor, (id)darkColor.CGColor];
+
+    [self.view.layer insertSublayer:gradient atIndex:0];
+    
+    self.backButton.layer.cornerRadius = 15;
+    self.signupButton.layer.cornerRadius = 15;
+    self.logoImageView.layer.cornerRadius = 15;
 }
 
 - (IBAction)onSignUp:(id)sender {
