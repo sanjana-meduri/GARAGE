@@ -13,6 +13,9 @@
 
 @interface MyGarageViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
+@property (weak, nonatomic) IBOutlet UIButton *forSaleButton;
+@property (weak, nonatomic) IBOutlet UIButton *inventoryButton;
+@property (weak, nonatomic) IBOutlet UIButton *addItemButton;
 
 @end
 
@@ -21,7 +24,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     PFUser *user = PFUser.currentUser;
-    self.userLabel.text = user.username;
+    self.userLabel.text = [NSString stringWithFormat:@"%@'s Garage", user.username];
+    
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+
+    gradient.frame = self.view.bounds;
+    UIColor *lightColor = [UIColor colorWithRed: 0.75 green: 0.91 blue: 0.91 alpha: 1.00];
+    UIColor *darkColor = [UIColor colorWithRed: 0.38 green: 0.71 blue: 0.80 alpha: 1.00];
+    gradient.colors = @[(id)lightColor.CGColor, (id)darkColor.CGColor];
+    
+    [self.view.layer insertSublayer:gradient atIndex:0];
+    
+    self.forSaleButton.layer.cornerRadius = 15;
+    self.inventoryButton.layer.cornerRadius = 15;
+    self.addItemButton.layer.cornerRadius = 15;
 }
 
 - (IBAction)onLogout:(id)sender {
