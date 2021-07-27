@@ -375,15 +375,15 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l56-YU-Rol">
-                                                    <rect key="frame" x="139" y="26" width="83" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="139" y="37" width="84" height="30"/>
+                                                    <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="18"/>
+                                                    <color key="textColor" red="0.1058823529" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7h7-U3-DLE">
-                                                    <rect key="frame" x="139" y="55" width="77" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="139" y="64" width="76" height="30"/>
+                                                    <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="18"/>
+                                                    <color key="textColor" red="0.1058823529" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gli-Bm-NBo">
@@ -392,16 +392,18 @@
                                                         <constraint firstAttribute="width" constant="45" id="dHG-1w-avm"/>
                                                         <constraint firstAttribute="height" constant="30" id="mdH-LL-DAK"/>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
                                                     <state key="normal" title="Delete">
                                                         <color key="titleColor" systemColor="systemRedColor"/>
                                                     </state>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUi-2k-Dry">
-                                                    <rect key="frame" x="288" y="112" width="66" height="30"/>
+                                                    <rect key="frame" x="288" y="114" width="66" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="66" id="Lye-g6-lJZ"/>
                                                         <constraint firstAttribute="height" constant="30" id="SC9-Wm-Na3"/>
                                                     </constraints>
+                                                    <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="16"/>
                                                     <state key="normal" title="Stop Sale"/>
                                                 </button>
                                             </subviews>
@@ -411,14 +413,15 @@
                                                 <constraint firstAttribute="trailing" secondItem="Gli-Bm-NBo" secondAttribute="trailing" constant="30" id="D9W-or-VAd"/>
                                                 <constraint firstAttribute="bottom" secondItem="inv-cS-BxD" secondAttribute="bottom" constant="12" id="FeG-oV-w6m"/>
                                                 <constraint firstItem="l56-YU-Rol" firstAttribute="leading" secondItem="inv-cS-BxD" secondAttribute="trailing" constant="12" id="VkP-ZM-5Qc"/>
-                                                <constraint firstAttribute="bottom" secondItem="FUi-2k-Dry" secondAttribute="bottom" constant="38" id="ef3-Pm-lNu"/>
+                                                <constraint firstAttribute="bottom" secondItem="FUi-2k-Dry" secondAttribute="bottom" constant="36" id="ef3-Pm-lNu"/>
                                                 <constraint firstItem="7h7-U3-DLE" firstAttribute="leading" secondItem="inv-cS-BxD" secondAttribute="trailing" constant="12" id="ioC-h8-G09"/>
-                                                <constraint firstItem="7h7-U3-DLE" firstAttribute="top" secondItem="l56-YU-Rol" secondAttribute="bottom" constant="8" id="l9P-pI-gNz"/>
+                                                <constraint firstItem="7h7-U3-DLE" firstAttribute="top" secondItem="l56-YU-Rol" secondAttribute="bottom" constant="-3" id="l9P-pI-gNz"/>
                                                 <constraint firstItem="inv-cS-BxD" firstAttribute="leading" secondItem="Aug-AU-7ei" secondAttribute="leading" constant="12" id="mmT-XY-TdL"/>
                                                 <constraint firstItem="inv-cS-BxD" firstAttribute="top" secondItem="Aug-AU-7ei" secondAttribute="top" constant="12" id="nad-Yg-cT8"/>
-                                                <constraint firstItem="l56-YU-Rol" firstAttribute="top" secondItem="Aug-AU-7ei" secondAttribute="top" constant="26" id="vDA-6f-NVh"/>
+                                                <constraint firstItem="l56-YU-Rol" firstAttribute="top" secondItem="Aug-AU-7ei" secondAttribute="top" constant="37" id="vDA-6f-NVh"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.792156862745098" green="0.9137254901960784" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="deleteButton" destination="Gli-Bm-NBo" id="8Bl-5h-up9"/>
                                             <outlet property="imageView" destination="inv-cS-BxD" id="xYS-22-CdU"/>
