@@ -41,6 +41,15 @@
     self.descriptionView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.descriptionView.layer.cornerRadius = 8;
     
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+
+    gradient.frame = self.view.bounds;
+    UIColor *lightColor = [UIColor colorWithRed: 0.75 green: 0.91 blue: 0.91 alpha: 1.00];
+    UIColor *darkColor = [UIColor colorWithRed: 0.38 green: 0.71 blue: 0.80 alpha: 1.00];
+    gradient.colors = @[(id)lightColor.CGColor, (id)darkColor.CGColor];
+    
+    [self.view.layer insertSublayer:gradient atIndex:0];
+    
     //stack overflow
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
