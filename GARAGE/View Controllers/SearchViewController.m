@@ -344,6 +344,11 @@
 }
 
 - (void) filterListings{
+    if(self.listings.count == 0){
+        [self.activityIndicator stopAnimating];
+        return;
+    }
+    
     self.filteredListings = [self.listings mutableCopy];
     for(NSString *address in self.distanceDictionary){
         if([[self.distanceDictionary objectForKey:address] doubleValue] > self.radiusLimit){
@@ -381,6 +386,8 @@
 
 - (IBAction)onPopupBuy:(id)sender {
     self.listing.alreadySold = TRUE;
+    self.listing.buyerName = self.user.username;
+    self.listing.buyerEmail = self.user.email;
     [self.listing saveInBackgroundWithBlock:^(BOOL succeeded, NSError * error) {
                 if (succeeded) {
                     NSLog(@"successfully sold item");

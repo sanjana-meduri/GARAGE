@@ -28,6 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *itemEmail;
 @property (nonatomic, strong) NSNumber *price;
 @property (nonatomic, strong) NSString *sellerName;
+@property (nonatomic, strong) NSString *buyerName;
+@property (nonatomic, strong) NSString *buyerEmail;
 @property (nonatomic, assign) double addressLat;
 @property (nonatomic, assign) double addressLong;
 

@@ -24,6 +24,8 @@
 @dynamic inInventory;
 @dynamic alreadySold;
 @dynamic newNotif;
+@dynamic buyerName;
+@dynamic buyerEmail;
 @dynamic addressLat;
 @dynamic addressLong;
 
