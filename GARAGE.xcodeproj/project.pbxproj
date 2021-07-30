@@ -32,6 +32,8 @@
 		E45C6D4126A1DBA8004F900A /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E45C6D4026A1DBA8004F900A /* SearchViewController.m */; };
 		E45C6D4526A1E3EB004F900A /* utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E45C6D4426A1E3EB004F900A /* utils.m */; };
 		E45C6D5026A1EF10004F900A /* SearchBuyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E45C6D4F26A1EF10004F900A /* SearchBuyCell.m */; };
+		E4C2171926B4612E00F7A114 /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2171826B4612E00F7A114 /* NotificationsViewController.m */; };
+		E4C2171C26B4638100F7A114 /* NotificationsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C2171B26B4638100F7A114 /* NotificationsCell.m */; };
 		E4FE2C8C269C97DE001E0457 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C8B269C97DE001E0457 /* LoginViewController.m */; };
 		E4FE2C94269CA28E001E0457 /* Listing.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C93269CA28E001E0457 /* Listing.m */; };
 		E4FE2C97269CA6F4001E0457 /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4FE2C96269CA6F4001E0457 /* AddItemViewController.m */; };
@@ -115,6 +117,10 @@
 		E45C6D4426A1E3EB004F900A /* utils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = utils.m; sourceTree = "<group>"; };
 		E45C6D4E26A1EF10004F900A /* SearchBuyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBuyCell.h; sourceTree = "<group>"; };
 		E45C6D4F26A1EF10004F900A /* SearchBuyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBuyCell.m; sourceTree = "<group>"; };
+		E4C2171726B4612E00F7A114 /* NotificationsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
+		E4C2171826B4612E00F7A114 /* NotificationsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
+		E4C2171A26B4638100F7A114 /* NotificationsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationsCell.h; sourceTree = "<group>"; };
+		E4C2171B26B4638100F7A114 /* NotificationsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationsCell.m; sourceTree = "<group>"; };
 		E4FE2C8A269C97DE001E0457 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		E4FE2C8B269C97DE001E0457 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		E4FE2C92269CA28E001E0457 /* Listing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Listing.h; sourceTree = "<group>"; };
@@ -276,6 +282,8 @@
 				E41CCD3826A8913F005234B4 /* SettingsTableViewController.m */,
 				E414453E26AF145B006A9D73 /* LaunchPageViewController.h */,
 				E414453F26AF145B006A9D73 /* LaunchPageViewController.m */,
+				E4C2171726B4612E00F7A114 /* NotificationsViewController.h */,
+				E4C2171826B4612E00F7A114 /* NotificationsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -300,6 +308,8 @@
 				E43FD307269F3B7D004BCBA4 /* BuyCell.m */,
 				E45C6D4E26A1EF10004F900A /* SearchBuyCell.h */,
 				E45C6D4F26A1EF10004F900A /* SearchBuyCell.m */,
+				E4C2171A26B4638100F7A114 /* NotificationsCell.h */,
+				E4C2171B26B4638100F7A114 /* NotificationsCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -588,12 +598,14 @@
 				E45C6D4126A1DBA8004F900A /* SearchViewController.m in Sources */,
 				E43FD30B269F414E004BCBA4 /* BuyDetailsViewController.m in Sources */,
 				E4FE2C97269CA6F4001E0457 /* AddItemViewController.m in Sources */,
+				E4C2171C26B4638100F7A114 /* NotificationsCell.m in Sources */,
 				E43FD308269F3B7D004BCBA4 /* BuyCell.m in Sources */,
 				E43FD2F6269DEC8F004BCBA4 /* InventoryCell.m in Sources */,
 				E4FE2C94269CA28E001E0457 /* Listing.m in Sources */,
 				E4FE2C9A269CAE46001E0457 /* MyGarageViewController.m in Sources */,
 				E40BBD98269C929F0039166B /* AppDelegate.m in Sources */,
 				E43FD305269F3B64004BCBA4 /* BuyViewController.m in Sources */,
+				E4C2171926B4612E00F7A114 /* NotificationsViewController.m in Sources */,
 				E45C6D4526A1E3EB004F900A /* utils.m in Sources */,
 				E40BBDA9269C929F0039166B /* main.m in Sources */,
 				E43FD30E269F49BC004BCBA4 /* BuyMapViewController.m in Sources */,

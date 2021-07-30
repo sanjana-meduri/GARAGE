@@ -10,6 +10,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NotificationsCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 
 @end
 

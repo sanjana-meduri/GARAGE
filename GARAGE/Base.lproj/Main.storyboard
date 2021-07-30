@@ -288,6 +288,11 @@
                                 <action selector="onLogout:" destination="kPw-oQ-OPW" id="zWb-sn-vex"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="bell.fill" catalog="system" id="QKH-jr-xFD">
+                            <connections>
+                                <segue destination="Mp4-QF-1lS" kind="show" id="N5Y-Mk-GUN"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addItemButton" destination="fGj-VI-hWw" id="3gQ-nH-vOo"/>
@@ -299,6 +304,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kkx-aP-fJO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3570.7692307692305" y="964.69194312796208"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Vqx-Vw-4Vc">
+            <objects>
+                <navigationController id="Mp4-QF-1lS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="OgI-rT-qp9"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jEr-4K-Efo">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.79215686269999996" green="0.91372549020000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.79215686269999996" green="0.91372549020000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.79215686269999996" green="0.91372549020000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="yQd-a1-YYK" kind="relationship" relationship="rootViewController" id="uzk-ek-Yh4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zaP-4T-fuX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4485" y="965"/>
+        </scene>
+        <!--Notifications-->
+        <scene sceneID="pBs-C5-tUO">
+            <objects>
+                <viewController id="yQd-a1-YYK" customClass="NotificationsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bFQ-qa-Lwp">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FV1-8z-i4E">
+                                <rect key="frame" x="0.0" y="34" width="390" height="810"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="NotificationsCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationsCell" rowHeight="72" id="xFF-bc-U00" customClass="NotificationsCell">
+                                        <rect key="frame" x="0.0" y="24.333333969116211" width="390" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xFF-bc-U00" id="5Ge-jy-sKx">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="72"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fyt-Ww-l9Q">
+                                                    <rect key="frame" x="20" y="11" width="350" height="50"/>
+                                                    <fontDescription key="fontDescription" name="MuktaMahee-Regular" family="Mukta Mahee" pointSize="18"/>
+                                                    <color key="textColor" red="0.1058823529" green="0.28627450980000002" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="fyt-Ww-l9Q" secondAttribute="bottom" constant="11" id="HWO-UF-wZw"/>
+                                                <constraint firstItem="fyt-Ww-l9Q" firstAttribute="leading" secondItem="5Ge-jy-sKx" secondAttribute="leading" constant="20" id="ZZh-xs-LME"/>
+                                                <constraint firstAttribute="trailing" secondItem="fyt-Ww-l9Q" secondAttribute="trailing" constant="20" id="gEp-uN-SRn"/>
+                                                <constraint firstItem="fyt-Ww-l9Q" firstAttribute="top" secondItem="5Ge-jy-sKx" secondAttribute="top" constant="11" id="gaz-4S-041"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="messageLabel" destination="fyt-Ww-l9Q" id="FTy-OO-Dbu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="UZx-FM-6aB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FV1-8z-i4E" firstAttribute="leading" secondItem="UZx-FM-6aB" secondAttribute="leading" id="1Ip-1S-h1d"/>
+                            <constraint firstItem="FV1-8z-i4E" firstAttribute="top" secondItem="bFQ-qa-Lwp" secondAttribute="top" constant="34" id="6Eb-zU-Kb9"/>
+                            <constraint firstAttribute="bottom" secondItem="FV1-8z-i4E" secondAttribute="bottom" id="TZV-VQ-05R"/>
+                            <constraint firstItem="FV1-8z-i4E" firstAttribute="trailing" secondItem="UZx-FM-6aB" secondAttribute="trailing" id="Zdr-LZ-dsR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Notifications" id="Ewy-F8-NHj"/>
+                    <connections>
+                        <outlet property="tableView" destination="FV1-8z-i4E" id="3NC-et-C6d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yxi-OO-KHJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5380" y="964.69194312796208"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="R7w-ox-gkl">
@@ -2101,6 +2184,7 @@
         <segue reference="aIK-I3-OdY"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="bell.fill" catalog="system" width="128" height="124"/>
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="doc" catalog="system" width="115" height="128"/>
