@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *details;
 @property (nonatomic, assign) BOOL alreadySold;
 @property (nonatomic, assign) BOOL inInventory;
+@property (nonatomic, assign) BOOL newNotif;
 @property (nonatomic, strong) NSString *tag;
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *condition;

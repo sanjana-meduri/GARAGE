@@ -23,6 +23,7 @@
 @dynamic itemEmail;
 @dynamic inInventory;
 @dynamic alreadySold;
+@dynamic newNotif;
 @dynamic addressLat;
 @dynamic addressLong;
 
@@ -43,6 +44,7 @@
     newListing.condition = condition;
     newListing.inInventory = true;
     newListing.alreadySold = false;
+    newListing.newNotif = true;
     newListing.itemEmail = newListing.seller.email;
     newListing.sellerName = newListing.seller.username;
     
