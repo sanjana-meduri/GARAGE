@@ -42,6 +42,8 @@
 - (void) queryListings{
     PFQuery *query = [utils setUpQuery];
     
+    [query orderByDescending:@"updatedAt"];
+    
     [query whereKey:@"seller" equalTo:self.user];
     
     NSNumber *alreadySoldTag = [NSNumber numberWithBool:TRUE];
