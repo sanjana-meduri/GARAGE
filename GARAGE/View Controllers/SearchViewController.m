@@ -401,7 +401,7 @@
     NSString *sellerName = self.listing.seller[@"username"];
     NSString *sellerEmail = self.listing.itemEmail;
     
-    NSString *purchasedMessage = [NSString stringWithFormat:@"You have requested to purchase %@ for $%@ from %@. Contact %@ at %@ to finalize the payment details and pick up your item from %@.", itemName, itemPrice, sellerName, sellerName, sellerEmail, itemAddress];
+    NSString *purchasedMessage = [NSString stringWithFormat:@"You have requested to purchase %@ for $%@ from %@.\n\nContact %@ at %@ to finalize the payment details and pick up your item from %@.", itemName, itemPrice, sellerName, sellerName, sellerEmail, itemAddress];
     
     self.purchasedMessageLabel.text = purchasedMessage;
     self.popupPurchasedView.layer.cornerRadius = 15;
@@ -409,6 +409,7 @@
     [UIView animateWithDuration:0.4 animations:^(void) {
         self.popupPurchasedView.alpha = 1;
         self.detailsBlurEffectView.alpha = 1;
+        self.popupDetailsView.alpha = 0;
     }];
 }
 
