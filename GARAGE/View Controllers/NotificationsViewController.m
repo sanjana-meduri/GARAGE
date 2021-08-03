@@ -69,6 +69,10 @@
     NSString *messageString = [NSString stringWithFormat:@"%@ (%@) \nPurchased %@", listing.buyerName, listing.buyerEmail, listing.name];
     cell.messageLabel.text = messageString;
     
+    cell.imageView.file = listing.image;
+    [cell.imageView loadInBackground];
+    cell.imageView.layer.cornerRadius = 15;
+    
     if(listing.newNotif) cell.backgroundColor = [UIColor colorWithRed: 0.75 green: 0.91 blue: 0.91 alpha: 1.00];
     else cell.backgroundColor = [UIColor whiteColor];
     

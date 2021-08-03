@@ -418,19 +418,19 @@
     self.listing = self.filteredListings[indexPath.section];
     self.popupNameLabel.text = self.listing.name;
     
-    self.popupSellerLabel.text = self.listing.seller[@"username"];
-    self.popupPriceLabel.text = [@"$" stringByAppendingString:[self.listing.price stringValue]];
+    self.popupSellerLabel.text = [@"Seller : " stringByAppendingString:self.listing.seller[@"username"]];
+    self.popupPriceLabel.text = [@"Price: $" stringByAppendingString:[self.listing.price stringValue]];
     
     NSDate *creationDate = self.listing.createdAt;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MM/dd/yy"];
     NSString *stringFromDate = [formatter stringFromDate:creationDate];
     
-    self.popupDateLabel.text = stringFromDate;
+    self.popupDateLabel.text = [@"Posted on: " stringByAppendingString:stringFromDate];
         
     self.popupDecsriptionLabel.text = self.listing.details;
-    self.popupConditionLabel.text = self.listing.condition;
-    self.popupAddressLabel.text = self.listing.address;
+    self.popupConditionLabel.text = [@"Condition: " stringByAppendingString:self.listing.condition];
+    self.popupAddressLabel.text = [@"Address: " stringByAppendingString:self.listing.address];
     
     self.popupImageView.layer.cornerRadius = 15;
     self.popupImageView.file = self.listing.image;
