@@ -70,6 +70,8 @@
 	<array>
 		<string>googlechromes</string>
 		<string>comgooglemaps</string>
+		<string>comgooglemapsurl</string>
+		<string>comgooglemaps-x-callback</string>
 	</array>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Need location access for map and distance filtering</string>

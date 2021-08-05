@@ -1909,6 +1909,16 @@
                                                 <action selector="onBack:" destination="MBd-ct-FVx" id="myI-UM-kdO"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" image="map.fill" catalog="system" style="plain" id="Rhp-gw-e9D">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="c7d-Sr-N4W">
+                                                <rect key="frame" x="352" y="17" width="22" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="map.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="onDirectionssRequest:" destination="MBd-ct-FVx" eventType="touchUpInside" id="2Ol-rk-Mbb"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -2202,6 +2212,7 @@
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="text.magnifyingglass" catalog="system" width="128" height="115"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

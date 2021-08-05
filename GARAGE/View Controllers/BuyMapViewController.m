@@ -90,6 +90,20 @@
     }];
 }
 
+- (IBAction)onDirectionssRequest:(id)sender {
+    NSLog(@"im here");
+    NSString *requestParameters = [NSString stringWithFormat:@"?&daddr=%@&directionsmode=driving", self.listing.address];
+    requestParameters = [requestParameters stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSString *requestURL = [@"comgooglemaps://" stringByAppendingString:requestParameters];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:requestURL] options:@{} completionHandler:^(BOOL success) {
+        if(!success){
+            NSString *requestURL = [@"https://maps.google.com/" stringByAppendingString:requestParameters];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:requestURL] options:@{} completionHandler:^(BOOL success) {}];
+        }
+    }];
+}
+
+
 //from maps api docs
 - (void)dealloc {
   [self.mapView removeObserver:self
